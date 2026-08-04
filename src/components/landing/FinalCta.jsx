@@ -1,4 +1,4 @@
-import { PRICE } from '../../data/content.js'
+import { PRICE, CHECKOUT_URL } from '../../data/content.js'
 import Reveal from '../ui/Reveal.jsx'
 import PrimaryButton from '../ui/PrimaryButton.jsx'
 
@@ -18,7 +18,7 @@ export default function FinalCta() {
           </p>
         </Reveal>
         <Reveal delay={180}>
-          <PrimaryButton to="/pre-checkout" variant="gold" className="mt-2">
+          <PrimaryButton href={CHECKOUT_URL} variant="gold" className="mt-2">
             Quero garantir meu kit agora
           </PrimaryButton>
         </Reveal>

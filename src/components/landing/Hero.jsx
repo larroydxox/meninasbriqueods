@@ -1,4 +1,4 @@
-import { heroContent } from '../../data/content.js'
+import { heroContent, CHECKOUT_URL } from '../../data/content.js'
 import useLiveViewers from '../../hooks/useLiveViewers.js'
 import PrimaryButton from '../ui/PrimaryButton.jsx'
 import Reveal from '../ui/Reveal.jsx'
@@ -42,7 +42,7 @@ export default function Hero() {
           </ul>
 
           <div className="mt-7 flex w-full flex-col items-center gap-3 sm:items-start">
-            <PrimaryButton to="/pre-checkout" className="w-full sm:w-auto">
+            <PrimaryButton href={CHECKOUT_URL} className="w-full sm:w-auto">
               {heroContent.ctaLabel}
             </PrimaryButton>
             <span className="flex items-center gap-1.5 text-xs font-semibold text-pink-900/60">

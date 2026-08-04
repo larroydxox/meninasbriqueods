@@ -1,4 +1,4 @@
-import { offerIncludes, offerBadges, PRICE } from '../../data/content.js'
+import { offerIncludes, offerBadges, PRICE, CHECKOUT_URL } from '../../data/content.js'
 import { images } from '../../assets/index.js'
 import useCountdown from '../../hooks/useCountdown.js'
 import Reveal from '../ui/Reveal.jsx'
@@ -59,7 +59,7 @@ export default function OfferSection() {
                 ))}
               </ul>
 
-              <PrimaryButton to="/pre-checkout" className="mt-7 w-full">
+              <PrimaryButton href={CHECKOUT_URL} className="mt-7 w-full">
                 Garantir meu kit por {PRICE.to}
               </PrimaryButton>
 

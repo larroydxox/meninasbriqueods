@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { PRICE } from '../../data/content.js'
+import { PRICE, CHECKOUT_URL } from '../../data/content.js'
 import PrimaryButton from '../ui/PrimaryButton.jsx'
 
 /**
@@ -28,7 +28,7 @@ export default function StickyMobileCta() {
           <p className="text-[11px] font-bold uppercase tracking-wide text-pink-900/50">De {PRICE.from} por</p>
           <p className="font-display text-xl font-bold text-pink-600">{PRICE.to}</p>
         </div>
-        <PrimaryButton to="/pre-checkout" icon={false} className="!px-5 !py-3 !text-sm">
+        <PrimaryButton href={CHECKOUT_URL} icon={false} className="!px-5 !py-3 !text-sm">
           Quero o kit
         </PrimaryButton>
       </div>
