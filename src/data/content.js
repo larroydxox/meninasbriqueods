@@ -1,8 +1,7 @@
 // Conteúdo central da página — copy em pt-BR reaproveitado do briefing do produto,
 // reorganizado e redistribuído entre as seções do funil.
 
-// <!-- CHECKOUT_URL_PLACEHOLDER: inserir aqui o link real do checkout -->
-export const CHECKOUT_URL = 'https://pay.exemplo.com/checkout/kit-casinhas-de-boneca'
+export const CHECKOUT_URL = 'https://ggcheckout.app/checkout/v2/Nd0Ot8L5tJO6VkKRAUgR'
 
 export const PRICE = {
   from: 'R$97',
@@ -29,26 +28,6 @@ export const heroContent = {
   ratingLabel: 'avaliação das mamães',
   viewersMin: 37,
   viewersMax: 96,
-}
-
-export const moreThanPdf = {
-  title: 'Muito mais do que arquivos em PDF',
-  body:
-    'Isso não é só um punhado de folhas para imprimir. É uma experiência completa de brincadeira — pensada por mães, testada por filhas — com casinhas, personagens, roupinhas, bônus e vídeo-guias para montar tudo sem estresse.',
-  points: [
-    {
-      title: 'Feito para ser usado, não só baixado',
-      text: 'Cada casinha foi desenhada para virar brincadeira real em poucos minutos depois de imprimir.',
-    },
-    {
-      title: 'Guias em vídeo passo a passo',
-      text: 'Você nunca fica na dúvida de como cortar, dobrar ou montar — mesmo sem jeito para artesanato.',
-    },
-    {
-      title: 'Impressão ilimitada, para sempre',
-      text: 'Comprou uma vez, imprime quantas vezes quiser — para casa, para viagem, para a escola.',
-    },
-  ],
 }
 
 export const whatsIncluded = {
@@ -168,13 +147,6 @@ export const testimonials = [
   { image: 'depoimento1', alt: 'Print de conversa no WhatsApp: mãe contando que a filha ficou horas brincando com o kit e não pediu o celular.' },
   { image: 'depoimento2', alt: 'Print de conversa no WhatsApp: mãe elogiando a qualidade do material e o suporte.' },
   { image: 'depoimento3', alt: 'Print de conversa no WhatsApp: mãe agradecendo pelo presente que a filha amou.' },
-]
-
-export const realPhotos = [
-  { image: 'real1', caption: '"Ela passou a tarde inteira brincando e nem lembrou do tablet." — Camila, mãe da Alice' },
-  { image: 'real2', caption: '"Virou ritual de sexta à noite aqui em casa." — Bruna, mãe da Sofia' },
-  { image: 'real3', caption: '"Meus dois brincaram juntos por mais de uma hora." — Fernanda, mãe do Théo e da Laura' },
-  { image: 'real4', caption: '"A qualidade de impressão ficou linda, parece brinquedo de loja." — Patrícia, mãe da Helena' },
 ]
 
 export const offerIncludes = [
