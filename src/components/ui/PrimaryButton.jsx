@@ -8,6 +8,7 @@ const variants = {
     'bg-gradient-to-r from-pink-500 via-pink-500 to-pink-600 text-white hover:brightness-105 hover:-translate-y-0.5',
   gold: 'bg-gradient-to-r from-gold-400 to-gold-500 text-pink-900 hover:brightness-105 hover:-translate-y-0.5',
   ghost: 'border-2 border-pink-300 bg-white text-pink-600 hover:bg-pink-50',
+  bloom: 'bg-gradient-to-r from-pink-500 to-lilac-500 text-white hover:brightness-105 hover:-translate-y-0.5',
 }
 
 /**
