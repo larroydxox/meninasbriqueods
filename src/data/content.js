@@ -139,8 +139,11 @@ export const faqItems = [
 ]
 
 export const guarantee = {
-  title: 'Garantia incondicional de 7 dias',
-  body: 'Se por qualquer motivo você não gostar do material, é só pedir reembolso em até 7 dias — sem perguntas, sem burocracia, 100% do seu dinheiro de volta.',
+  badgeLabel: '7 dias',
+  badgeCaption: 'Garantia',
+  title: '7 Dias de Garantia Incondicional',
+  body: 'Se você não amar o material, devolvemos 100% do seu dinheiro.',
+  footnote: 'Sem perguntas. Sem burocracia.',
 }
 
 export const testimonials = [
@@ -149,18 +152,26 @@ export const testimonials = [
   { image: 'depoimento3', alt: 'Print de conversa no WhatsApp: mãe agradecendo pelo presente que a filha amou.' },
 ]
 
+export const offerContent = {
+  title: 'Kit completo de brincadeiras criativas',
+  subtitle: 'Tudo o que sua filha precisa para criar um mundo inteiro usando apenas papel, tesoura e muita imaginação.',
+  priceLabel: 'por apenas',
+  installmentLabel: 'Pagamento único',
+  ctaLabel: 'Quero ver minha filha brincando',
+}
+
 export const offerIncludes = [
-  '30 casinhas interativas para montar',
-  '10 personagens exclusivos + roupinhas',
-  '2 kits de bebê completos',
-  '+1200 atividades para imprimir',
-  'Jogo UNO ilustrado',
-  'Guias de montagem em vídeo',
-  '4 bônus exclusivos (valor R$97)',
-  'Impressão ilimitada, para sempre',
+  '30 Casinhas Interativas',
+  '10 Personagens Exclusivos',
+  'Roupinhas e acessórios',
+  '2 Kits de Bebê',
+  '+1200 Atividades',
+  'Suporte pelo WhatsApp',
+  'Guias de montagem em Vídeo',
+  'Imprima quantas vezes quiser',
 ]
 
-export const offerBadges = ['Garantia de 7 dias', 'Acesso imediato', 'Arquivos digitais', 'Compra 100% segura']
+export const offerBadges = ['Garantia de 7 dias', 'Acesso imediato', 'Arquivos digitais', 'Compra segura']
 
 export const preCheckoutOffer = {
   title: 'Kit 30 Casinhas de Boneca + bônus',
