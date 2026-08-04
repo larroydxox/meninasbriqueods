@@ -133,7 +133,7 @@ export default function PreCheckout() {
                 </span>
               </div>
 
-              {/* CHECKOUT_URL_PLACEHOLDER: inserir aqui o link real do checkout */}
+              {/* Link real do checkout — ver CHECKOUT_URL em src/data/content.js */}
               <a
                 href={CHECKOUT_URL}
                 onClick={handleCheckoutClick}
