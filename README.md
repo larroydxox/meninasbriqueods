@@ -32,7 +32,7 @@ Os pontos abaixo estão marcados com comentários `PLACEHOLDER` no código:
 
 | O quê | Onde |
 | --- | --- |
-| Vídeo da VSL | já embutido em `src/assets/video/vsl.mp4` (comprimido para web); componente `src/components/landing/VslPlayer.jsx` |
+| Vídeo da VSL | player da vturb (ConverteAI) em `src/components/landing/VslPlayer.jsx` |
 | Depoimentos | placeholders `[DEPOIMENTOS REAIS]` em `testimonials` (`src/data/content.js`) — nomes e prints só com autorização |
 | Imagem do produto (caixa) | `src/assets/img/product-box.webp` |
 | Links reais do checkout | `CHECKOUT_URL` (Kit Básico, R$10), `CHECKOUT_URL_COMPLETO` (Kit Completo, R$19,90) e `CHECKOUT_URL_UPSELL` (oferta do modal, `UPSELL_PRICE`) em `src/data/content.js` |
@@ -48,7 +48,6 @@ altere esse arquivo em vez de procurar dentro dos componentes.
 
 - Imagens convertidas para WebP e redimensionadas para o tamanho real de uso
   (redução de ~17MB → ~900KB nos assets estáticos).
-- Vídeo da VSL recomprimido (H.264/AAC, faststart) de ~20MB → ~7MB, carregado
-  com `preload="metadata"` (só baixa o vídeo completo quando a visitante dá play).
+- VSL servida pela vturb (script carregado de forma assíncrona).
 - `loading="lazy"` + `decoding="async"` em todas as imagens abaixo da dobra.
 - Todas as imagens usam `aspect-ratio` reservado (evita layout shift em 3G/4G).
