@@ -61,7 +61,7 @@ export default function VslPlayer() {
   }
 
   return (
-    <div className="relative mx-auto aspect-[9/16] w-full max-w-[300px] overflow-hidden rounded-[2rem] bg-pink-950 shadow-soft ring-4 ring-white/70 sm:max-w-[320px]">
+    <div className="relative mx-auto aspect-[9/16] w-full max-w-[300px] overflow-hidden rounded-[2rem] bg-taupe-950 shadow-soft ring-4 ring-white/70 sm:max-w-[320px]">
       {/* VSL_PLACEHOLDER: inserir aqui o vídeo que já está anexado no projeto */}
       <video
         ref={videoRef}
@@ -85,7 +85,7 @@ export default function VslPlayer() {
           aria-label={started ? 'Continuar vídeo' : 'Assistir vídeo'}
           className="absolute inset-0 flex items-center justify-center"
         >
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-pink-600 shadow-lg transition-transform duration-200 hover:scale-105 animate-pulse-soft">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-taupe-600 shadow-lg transition-transform duration-200 hover:scale-105 animate-pulse-soft">
             <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7" fill="currentColor" aria-hidden="true">
               <path d="M8 5v14l11-7z" />
             </svg>
@@ -110,7 +110,7 @@ export default function VslPlayer() {
           aria-valuemax={100}
           aria-valuenow={Math.round(progress)}
         >
-          <div className="h-full rounded-full bg-pink-400" style={{ width: `${progress}%` }} />
+          <div className="h-full rounded-full bg-taupe-400" style={{ width: `${progress}%` }} />
         </div>
         <div className="flex items-center justify-between">
           <button type="button" onClick={togglePlay} aria-label={playing ? 'Pausar' : 'Reproduzir'} className="text-white">

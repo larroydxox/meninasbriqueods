@@ -1,7 +1,7 @@
-# Kit 30 Casinhas de Boneca — Landing + Pré-checkout
+# +200 Atividades Criativas para Fazer em Casa — Landing + Pré-checkout
 
 Landing page de vendas + página de pré-checkout para o produto digital
-**"30 Casinhas Interativas de Boneca para Imprimir"**. Mobile-first (tráfego de
+**"+200 Atividades Criativas para Fazer em Casa"** (público: pais e mães de crianças de 3 a 8 anos). Mobile-first (tráfego de
 anúncios no Instagram/Facebook), construído com React + Tailwind CSS v4 e
 React Router.
 
@@ -33,9 +33,9 @@ Os pontos abaixo estão marcados com comentários `PLACEHOLDER` no código:
 | O quê | Onde |
 | --- | --- |
 | Vídeo da VSL | já embutido em `src/assets/video/vsl.mp4` (comprimido para web); componente `src/components/landing/VslPlayer.jsx` |
-| Prints dos depoimentos do WhatsApp | já embutidos em `src/assets/img/depoimento-*.webp`; componente `src/components/landing/TestimonialsCarousel.jsx` |
+| Depoimentos | placeholders `[DEPOIMENTOS REAIS]` em `testimonials` (`src/data/content.js`) — nomes e prints só com autorização |
 | Imagem do produto (caixa) | `src/assets/img/product-box.webp` |
-| Link real do checkout | constante `CHECKOUT_URL` em `src/data/content.js` e botão final em `src/pages/PreCheckout.jsx` |
+| Links reais do checkout | `CHECKOUT_URL` (Kit Básico, R$10), `CHECKOUT_URL_COMPLETO` (Kit Completo, R$19,90) e `CHECKOUT_URL_UPSELL` (oferta do modal, `UPSELL_PRICE`) em `src/data/content.js` |
 | Meta Pixel / Google Tag Manager | comentários no `<head>`/`<body>` de `index.html`, e evento de `InitiateCheckout` comentado em `src/pages/PreCheckout.jsx` |
 
 ## Copy e conteúdo

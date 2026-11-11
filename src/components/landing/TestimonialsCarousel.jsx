@@ -1,9 +1,7 @@
 import { useRef, useState } from 'react'
 import { testimonials } from '../../data/content.js'
-import { images } from '../../assets/index.js'
 import Reveal from '../ui/Reveal.jsx'
 import SectionHeading from '../ui/SectionHeading.jsx'
-import LazyImage from '../ui/LazyImage.jsx'
 
 export default function TestimonialsCarousel() {
   const trackRef = useRef(null)
@@ -29,13 +27,13 @@ export default function TestimonialsCarousel() {
   }
 
   return (
-    <section className="bg-pink-900 py-16 sm:py-20">
+    <section className="bg-taupe-900 py-16 sm:py-20">
       <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
         <SectionHeading
           light
-          eyebrow="Depoimentos reais"
-          title="O que as mães estão dizendo no WhatsApp"
-          subtitle="Conversas reais, direto de quem já recebeu o kit."
+          eyebrow="Depoimentos"
+          title="O que as famílias estão dizendo"
+          subtitle="Relatos de quem já usa as atividades em casa."
         />
 
         <div className="relative">
@@ -44,7 +42,7 @@ export default function TestimonialsCarousel() {
             type="button"
             onClick={() => scrollToIndex(active - 1)}
             aria-label="Depoimento anterior"
-            className="absolute left-0 top-1/2 z-10 hidden -translate-x-4 -translate-y-1/2 items-center justify-center rounded-full bg-white p-2.5 text-pink-700 shadow-soft transition hover:scale-105 sm:flex disabled:opacity-30"
+            className="absolute left-0 top-1/2 z-10 hidden -translate-x-4 -translate-y-1/2 items-center justify-center rounded-full bg-white p-2.5 text-taupe-700 shadow-soft transition hover:scale-105 sm:flex disabled:opacity-30"
             disabled={active === 0}
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -55,7 +53,7 @@ export default function TestimonialsCarousel() {
             type="button"
             onClick={() => scrollToIndex(active + 1)}
             aria-label="Próximo depoimento"
-            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-4 items-center justify-center rounded-full bg-white p-2.5 text-pink-700 shadow-soft transition hover:scale-105 sm:flex disabled:opacity-30"
+            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-4 items-center justify-center rounded-full bg-white p-2.5 text-taupe-700 shadow-soft transition hover:scale-105 sm:flex disabled:opacity-30"
             disabled={active === testimonials.length - 1}
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -63,7 +61,7 @@ export default function TestimonialsCarousel() {
             </svg>
           </button>
 
-          {/* TESTIMONIALS_PLACEHOLDER: inserir aqui as imagens que já estão no repositório do GitHub */}
+          {/* [DEPOIMENTOS REAIS]: substituir pelos depoimentos em src/data/content.js — nomes e prints só com autorização */}
           <div
             ref={trackRef}
             onScroll={onScroll}
@@ -71,11 +69,11 @@ export default function TestimonialsCarousel() {
           >
             {testimonials.map((item, i) => (
               <Reveal
-                key={item.image}
+                key={item.id}
                 delay={i * 100}
-                className="aspect-[9/16] w-[78%] shrink-0 snap-center overflow-hidden rounded-3xl bg-white shadow-soft sm:w-[42%] lg:w-[30%]"
+                className="flex aspect-[9/16] w-[78%] shrink-0 snap-center items-center justify-center overflow-hidden rounded-3xl bg-white p-6 text-center shadow-soft sm:w-[42%] lg:w-[30%]"
               >
-                <LazyImage src={images[item.image]} alt={item.alt} className="h-full w-full object-cover" />
+                <span className="font-display text-lg font-semibold text-taupe-900/60">{item.text}</span>
               </Reveal>
             ))}
           </div>
@@ -83,7 +81,7 @@ export default function TestimonialsCarousel() {
           <div className="mt-5 flex justify-center gap-2 sm:hidden">
             {testimonials.map((item, i) => (
               <button
-                key={item.image}
+                key={item.id}
                 type="button"
                 aria-label={`Ir para depoimento ${i + 1}`}
                 onClick={() => scrollToIndex(i)}

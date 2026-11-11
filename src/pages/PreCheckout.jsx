@@ -12,24 +12,24 @@ export default function PreCheckout() {
   const [redirecting, setRedirecting] = useState(false)
 
   useEffect(() => {
-    document.title = 'Você está a um passo · Kit 30 Casinhas de Boneca'
+    document.title = 'Você está a um passo · +200 Atividades Criativas'
   }, [])
 
   const trimmedName = childName.trim()
-  const displayName = trimmedName || 'sua filha'
+  const displayName = trimmedName || 'A criança'
 
   const goToStep2 = () => setStep(2)
 
   const handleCheckoutClick = () => {
     setRedirecting(true)
     // META PIXEL — disparar evento de início de checkout aqui, ex:
-    // fbq('track', 'InitiateCheckout', { content_name: 'Kit 30 Casinhas de Boneca' })
+    // fbq('track', 'InitiateCheckout', { content_name: '+200 Atividades Criativas para Fazer em Casa' })
   }
 
   return (
-    <main className="flex min-h-screen flex-col bg-gradient-to-b from-pink-100 via-cream-50 to-cream-50">
+    <main className="flex min-h-screen flex-col bg-gradient-to-b from-taupe-100 via-cream-50 to-cream-50">
       <div className="mx-auto flex w-full max-w-md flex-1 flex-col px-5 py-6 sm:py-10">
-        <Link to="/" className="mb-5 inline-flex items-center gap-1.5 self-start text-xs font-bold text-pink-900/50">
+        <Link to="/" className="mb-5 inline-flex items-center gap-1.5 self-start text-xs font-bold text-taupe-900/50">
           <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="m15 6-6 6 6 6" />
           </svg>
@@ -42,29 +42,29 @@ export default function PreCheckout() {
           {step === 1 ? (
             <Reveal key="step1" className="flex flex-col gap-6">
               <div className="text-center">
-                <span className="text-4xl">🏡💗</span>
-                <h1 className="mt-3 text-2xl leading-tight text-pink-900 sm:text-3xl">Vamos personalizar sua experiência?</h1>
-                <p className="mt-2 text-sm text-pink-900/65 sm:text-base">
+                <span className="text-4xl">🎨✂️</span>
+                <h1 className="mt-3 text-2xl leading-tight text-taupe-900 sm:text-3xl">Vamos personalizar sua experiência?</h1>
+                <p className="mt-2 text-sm text-taupe-900/65 sm:text-base">
                   Só mais um detalhe antes de liberar sua oferta especial.
                 </p>
               </div>
 
               <div className="rounded-3xl bg-white p-6 shadow-soft">
-                <label htmlFor="child-name" className="text-sm font-bold text-pink-900">
-                  Qual o nome da sua filha?
+                <label htmlFor="child-name" className="text-sm font-bold text-taupe-900">
+                  Qual o nome da criança?
                 </label>
                 <input
                   id="child-name"
                   type="text"
                   value={childName}
                   onChange={(e) => setChildName(e.target.value)}
-                  placeholder="Ex: Helena"
-                  className="mt-2 w-full rounded-2xl border-2 border-pink-100 bg-cream-50 px-4 py-3.5 text-base text-pink-900 outline-none transition-colors focus:border-pink-400"
+                  placeholder="Ex: Alex"
+                  className="mt-2 w-full rounded-2xl border-2 border-taupe-100 bg-cream-50 px-4 py-3.5 text-base text-taupe-900 outline-none transition-colors focus:border-taupe-400"
                 />
                 <button
                   type="button"
                   onClick={goToStep2}
-                  className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-pink-600 px-7 py-4 font-display text-base font-semibold text-white shadow-soft transition-transform active:scale-[0.98]"
+                  className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-taupe-500 to-taupe-600 px-7 py-4 font-display text-base font-semibold text-white shadow-soft transition-transform active:scale-[0.98]"
                 >
                   Continuar
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -74,7 +74,7 @@ export default function PreCheckout() {
                 <button
                   type="button"
                   onClick={goToStep2}
-                  className="mt-3 w-full text-center text-xs font-semibold text-pink-900/40"
+                  className="mt-3 w-full text-center text-xs font-semibold text-taupe-900/40"
                 >
                   Prefiro não informar agora
                 </button>
@@ -83,31 +83,30 @@ export default function PreCheckout() {
           ) : (
             <Reveal key="step2" className="flex flex-col gap-6">
               <div className="text-center">
-                <span className="text-4xl">🎉</span>
-                <h1 className="mt-3 text-2xl leading-tight text-pink-900 sm:text-3xl">
-                  Perfeito, {displayName} vai amar! 💕
+                <span className="text-4xl">✨</span>
+                <h1 className="mt-3 text-2xl leading-tight text-taupe-900 sm:text-3xl">
+                  Perfeito! {displayName} vai adorar as atividades 🎉
                 </h1>
-                <p className="mt-2 text-sm text-pink-900/65 sm:text-base">
+                <p className="mt-2 text-sm text-taupe-900/65 sm:text-base">
                   Sua oferta está reservada. Falta só finalizar a compra com segurança.
                 </p>
               </div>
 
               <div className="overflow-hidden rounded-3xl bg-white shadow-soft">
-                <div className="flex items-center gap-4 border-b border-pink-100 p-5">
-                  <LazyImage src={images.productBox} alt="Kit 30 Casinhas de Boneca de Papel" className="h-20 w-14 shrink-0 object-contain" eager />
+                <div className="flex items-center gap-4 border-b border-taupe-100 p-5">
+                  <LazyImage src={images.productBox} alt="+200 Atividades Criativas para Fazer em Casa" className="h-20 w-14 shrink-0 object-contain" eager />
                   <div>
-                    <h2 className="font-display text-sm font-semibold text-pink-900 sm:text-base">{preCheckoutOffer.title}</h2>
+                    <h2 className="font-display text-sm font-semibold text-taupe-900 sm:text-base">{preCheckoutOffer.title}</h2>
                     <div className="mt-1 flex items-baseline gap-2">
-                      <span className="text-xs text-pink-900/40 line-through">{PRICE.from}</span>
-                      <span className="font-display text-xl font-bold text-pink-600">{PRICE.to}</span>
+                                            <span className="font-display text-xl font-bold text-taupe-600">{PRICE.to}</span>
                     </div>
                   </div>
                 </div>
 
                 <ul className="flex flex-col gap-2 p-5 pt-4">
                   {preCheckoutOffer.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm font-semibold text-pink-900">
-                      <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-pink-500" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <li key={item} className="flex items-center gap-2 text-sm font-semibold text-taupe-900">
+                      <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-taupe-500" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="m5 13 4 4L19 7" />
                       </svg>
                       {item}
@@ -137,7 +136,7 @@ export default function PreCheckout() {
               <a
                 href={CHECKOUT_URL}
                 onClick={handleCheckoutClick}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-500 px-7 py-5 text-center font-display text-lg font-bold text-pink-900 shadow-soft transition-transform active:scale-[0.98]"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-500 px-7 py-5 text-center font-display text-lg font-bold text-taupe-900 shadow-soft transition-transform active:scale-[0.98]"
               >
                 {redirecting ? 'Redirecionando…' : `Ir para pagamento seguro · ${PRICE.to}`}
                 {!redirecting && (
@@ -147,7 +146,7 @@ export default function PreCheckout() {
                 )}
               </a>
 
-              <button type="button" onClick={() => setStep(1)} className="text-center text-xs font-semibold text-pink-900/40">
+              <button type="button" onClick={() => setStep(1)} className="text-center text-xs font-semibold text-taupe-900/40">
                 Voltar e editar
               </button>
             </Reveal>

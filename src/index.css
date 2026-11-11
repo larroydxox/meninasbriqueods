@@ -1,17 +1,18 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Rosa chiclete como cor dominante */
-  --color-pink-50: #fff5fa;
-  --color-pink-100: #ffe4f1;
-  --color-pink-200: #ffc2e0;
-  --color-pink-300: #ff96c8;
-  --color-pink-400: #ff5fa8;
-  --color-pink-500: #f4368c;
-  --color-pink-600: #d81f74;
-  --color-pink-700: #b01260;
-  --color-pink-800: #870f4c;
-  --color-pink-900: #5c0a35;
+  /* Neutro quente (taupe) como cor dominante — mesma luminância/contraste da escala anterior */
+  --color-taupe-50: #f9f8f6;
+  --color-taupe-100: #efeae6;
+  --color-taupe-200: #dad2cb;
+  --color-taupe-300: #bfb6ac;
+  --color-taupe-400: #a4988c;
+  --color-taupe-500: #938373;
+  --color-taupe-600: #7f6f60;
+  --color-taupe-700: #66594c;
+  --color-taupe-800: #4e4339;
+  --color-taupe-900: #352d24;
+  --color-taupe-950: #2d251e;
 
   /* Lilás complementar */
   --color-lilac-50: #f7f3fd;
@@ -37,7 +38,7 @@
   --font-display: 'Fredoka', ui-rounded, 'Baloo 2', system-ui, sans-serif;
   --font-body: 'Nunito', ui-rounded, system-ui, sans-serif;
 
-  --shadow-soft: 0 10px 30px -8px rgba(216, 31, 116, 0.25);
+  --shadow-soft: 0 10px 30px -8px rgba(127, 111, 96, 0.25);
   --shadow-softer: 0 6px 20px -6px rgba(138, 95, 207, 0.18);
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -57,7 +58,7 @@
   body {
     margin: 0;
     font-family: var(--font-body);
-    color: var(--color-pink-900);
+    color: var(--color-taupe-900);
     background: var(--color-cream-50);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -74,8 +75,8 @@
   }
 
   ::selection {
-    background: var(--color-pink-200);
-    color: var(--color-pink-900);
+    background: var(--color-taupe-200);
+    color: var(--color-taupe-900);
   }
 }
 
@@ -172,8 +173,8 @@
   display: none;
 }
 
-.text-gradient-pink {
-  background: linear-gradient(92deg, var(--color-pink-600), var(--color-pink-400) 55%, var(--color-gold-500));
+.text-gradient-taupe {
+  background: linear-gradient(92deg, var(--color-taupe-600), var(--color-taupe-400) 55%, var(--color-gold-500));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

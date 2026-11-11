@@ -1,140 +1,143 @@
-// Conteúdo central da página — copy em pt-BR reaproveitado do briefing do produto,
-// reorganizado e redistribuído entre as seções do funil.
+// Conteúdo central da página — copy em pt-BR do produto
+// "+200 Atividades Criativas para Fazer em Casa", distribuída entre as seções do funil.
 
+// Checkout do Kit Básico (R$10,00) — link real já em uso.
 export const CHECKOUT_URL = 'https://ggcheckout.app/checkout/v2/Nd0Ot8L5tJO6VkKRAUgR'
 
+// TODO: substituir pelo link real do checkout do Kit Completo (R$19,90).
+export const CHECKOUT_URL_COMPLETO = '#checkout-kit-completo'
+
+// TODO: substituir pelo link real do checkout da oferta do modal (Kit Completo por R$15,00).
+// O valor em UPSELL_PRICE abaixo precisa ser o mesmo configurado nesse checkout.
+export const CHECKOUT_URL_UPSELL = '#checkout-kit-completo-oferta'
+
 export const PRICE = {
-  from: 'R$97',
   to: 'R$10',
   installment: 'ou em até 12x no cartão',
 }
 
+export const UPSELL_PRICE = 'R$ 15,00'
+
 export const WHATSAPP_SUPPORT = 'https://wa.me/5500000000000'
 
 export const heroContent = {
-  eyebrow: 'Kit digital para imprimir',
-  headline: 'O presente que tira sua filha da tela e devolve horas de brincadeira de verdade',
+  eyebrow: 'Material digital em PDF',
+  headline: '+200 atividades criativas para fazer em casa com crianças de 3 a 8 anos',
   subheadline:
-    'Um kit completo de casinhas de boneca de papel, prontas para imprimir, montar e brincar — para meninas de 3 a 10 anos. Sem app, sem tablet, sem tela.',
+    'Ideias prontas, com lista de materiais e passo a passo, para transformar o tempo livre em casa em momentos de criação — sem precisar planejar nada.',
   checklist: [
     'Menos tempo de tela',
     'Estimula a criatividade',
-    'Horas de diversão garantida',
-    'Entrega imediata após a compra',
+    'Materiais e passo a passo em cada atividade',
+    'Acesso imediato após a compra',
   ],
   ctaLabel: 'Quero o kit por R$10',
   secureLabel: 'Compra 100% segura · acesso imediato',
-  rating: '4.9/5',
-  ratingLabel: 'avaliação das mamães',
-  viewersMin: 37,
-  viewersMax: 96,
 }
 
 export const whatsIncluded = {
-  title: 'O que ela recebe no kit completo',
-  subtitle: 'Tudo organizado, em português, pronto para imprimir hoje mesmo.',
+  title: 'O que você recebe',
+  subtitle: 'Tudo organizado, em português, pronto para usar hoje mesmo.',
   items: [
-    { title: '30 casinhas interativas', text: 'Modelos variados de casinhas de boneca para montar e colecionar.' },
-    { title: '10 personagens exclusivos', text: 'Bonecas de papel com rostinhos e estilos únicos.' },
-    { title: 'Roupinhas e acessórios', text: 'Guarda-roupa completo para trocar o visual das bonecas.' },
-    { title: '2 kits de bebê', text: 'Carrinho, kit médico e acessórios para brincar de cuidar do bebê.' },
-    { title: '+1200 atividades para imprimir', text: 'Jogos, desenhos e passatempos extras para todos os dias.' },
-    { title: 'Jogo UNO ilustrado', text: 'Baralho temático pronto para imprimir e jogar em família.' },
-    { title: 'Guias de montagem em vídeo', text: 'Passo a passo em vídeo para montar cada casinha sem erro.' },
-    { title: 'Arquivos em PDF de alta qualidade', text: 'Prontos para impressão em casa ou em gráfica.' },
+    { title: '+200 atividades criativas', text: 'Ideias variadas para crianças de 3 a 8 anos fazerem em casa.' },
+    { title: 'Lista de materiais', text: 'Cada atividade mostra o que separar antes de começar.' },
+    { title: 'Passo a passo', text: 'Instruções claras para conduzir a atividade sem complicação.' },
+    { title: 'Materiais do dia a dia', text: 'Atividades pensadas para itens simples, fáceis de encontrar.' },
+    { title: 'Arquivos em PDF', text: 'Abra no celular, tablet ou computador — ou imprima se preferir.' },
+    { title: 'Acesso imediato', text: 'Link enviado por e-mail assim que o pagamento é aprovado.' },
   ],
 }
 
 export const lessScreens = {
-  title: 'Menos telas, mais infância',
-  subtitle: 'Uma alternativa real ao tempo de tela — sem celular, sem tablet, sem TV.',
+  title: 'Menos telas, mais criação',
+  subtitle: 'Uma alternativa real ao tempo de tela, com ideias prontas para qualquer momento do dia.',
   withoutScreen: {
-    label: 'Com o kit de casinhas',
-    items: ['Mãos ocupadas cortando e montando', 'Histórias inventadas em voz alta', 'Tempo de qualidade em família', 'Imaginação sem limite de bateria'],
+    label: 'Com as atividades',
+    items: ['Mãos ocupadas criando', 'Ideias prontas na hora do tédio', 'Tempo de qualidade em família', 'Criatividade em vez de rolagem infinita'],
   },
   withScreen: {
-    label: 'Sem o kit (dia comum)',
-    items: ['Olhos grudados na tela', 'Brincadeira passiva, sem criação', 'Cada um no seu canto', 'Ansiedade para "mais um vídeo"'],
+    label: 'Sem as atividades (dia comum)',
+    items: ['Olhos grudados na tela', 'Brincadeira passiva, sem criação', 'Cada um no seu canto', '"Tô entediado" a cada meia hora'],
   },
+  footnote: 'Menos tela · mais mão na massa · mais tempo juntos.',
 }
 
 export const skillsDeveloped = {
-  title: 'O que ela desenvolve brincando',
-  subtitle: 'Cada casinha montada é um pequeno exercício de desenvolvimento.',
+  title: 'O que a criança desenvolve fazendo',
+  subtitle: 'Cada atividade é um pequeno exercício de desenvolvimento.',
   skills: [
-    { title: 'Criatividade', text: 'Cria cenários e decora cada cômodo do seu jeito.' },
-    { title: 'Imaginação', text: 'Inventa mundos e situações novas a cada brincadeira.' },
-    { title: 'Coordenação motora fina', text: 'Recorta, dobra e encaixa peças pequenas com as mãos.' },
-    { title: 'Criação de histórias', text: 'Dá vida aos personagens com diálogos e enredos próprios.' },
-    { title: 'Autonomia', text: 'Aprende a montar e organizar a brincadeira sozinha.' },
-    { title: 'Momentos em família', text: 'Aproxima pais e filhos em torno de uma mesma mesa.' },
+    { title: 'Criatividade', text: 'Inventa, mistura cores e encontra o próprio jeito de fazer.' },
+    { title: 'Coordenação motora fina', text: 'Recorta, cola, dobra e desenha com as mãos.' },
+    { title: 'Concentração', text: 'Segue as etapas do início ao fim de cada atividade.' },
+    { title: 'Resolução de problemas', text: 'Descobre como fazer quando algo não sai como o planejado.' },
+    { title: 'Autonomia', text: 'Ganha confiança para criar com cada vez menos ajuda.' },
+    { title: 'Momentos em família', text: 'Aproxima adultos e crianças em torno de uma mesma mesa.' },
   ],
 }
 
 export const perfectFor = {
   title: 'Perfeito para...',
   tags: [
-    'Meninas de 3 a 10 anos',
-    'Dar de presente',
+    'Crianças de 3 a 8 anos',
+    'Pais e mães sem tempo para planejar',
     'Férias escolares',
     'Fins de semana em casa',
     'Dias de chuva',
-    'Atividades escolares',
-    'Aniversários',
-    'Viagens sem tela',
+    'Tardes depois da escola',
+    'Encontros com primos e amigos',
+    'Rotina com menos tela',
   ],
 }
 
 export const bonuses = {
-  title: 'Bônus exclusivos de hoje',
-  subtitle: 'Só para quem garantir o kit agora — valor total grátis na sua compra.',
-  totalValueLabel: 'Valor total dos bônus',
-  totalValue: 'R$97',
-  todayLabel: 'Hoje: grátis',
+  title: 'Os 4 bônus do Kit Completo',
+  subtitle: 'Materiais extras que acompanham o Kit Completo.',
+  footerLabel: 'Os 4 bônus estão inclusos no Kit Completo por R$19,90',
   items: [
-    { title: 'Cenário interativo', text: 'Um cenário extra para expandir as brincadeiras da casinha.', value: 'R$27' },
-    { title: 'Carrinho de bebê', text: 'Acessório de papel para passear com o bebê da boneca.', image: 'bonusCarrinho', value: 'R$19' },
-    { title: 'Kit médico', text: 'Maleta completa para brincar de cuidar dos personagens.', image: 'bonusKitMedico', value: 'R$24' },
-    { title: 'Guarda-roupa do bebê', text: 'Roupinhas extras para trocar o visual do bebê a qualquer hora.', image: 'bonusGuardaroupa', value: 'R$27' },
+    { title: '30 Desafios Criativos de até 15 minutos', text: 'Propostas rápidas para quando o tempo é curto.', icon: 'clock' },
+    { title: 'Kit de Moldes para Recortar e Montar', text: 'Moldes prontos para imprimir, recortar e montar.', icon: 'scissors' },
+    { title: 'Guia de Materiais Caseiros e Substituições', text: 'O que usar quando falta algum material.', icon: 'list' },
+    { title: 'Calendário de 30 Dias de Diversão', text: 'Uma sugestão por dia para organizar o mês.', icon: 'calendar' },
   ],
 }
 
 export const whyMomsChoose = {
-  title: 'Por que milhares de mães já escolheram este kit',
+  eyebrow: 'Por que escolher',
+  title: 'Por que pais e mães escolhem estas atividades',
   reasons: [
-    'Reduz o tempo de tela sem birra e sem culpa',
+    'Alternativas práticas para reduzir o tempo de tela',
     'Estimula a criatividade em vez do modo automático',
     'Trabalha coordenação motora fina desde cedo',
-    'Brincadeiras com propósito educativo, não só entretenimento',
+    'Atividades com propósito, não só passatempo',
     'Aproxima a família em volta da mesma mesa',
-    'Impressão ilimitada — nunca mais fica sem novidade',
+    'O arquivo é seu: use quantas vezes quiser',
   ],
 }
 
 export const faqItems = [
   {
     q: 'Como eu recebo o material depois de comprar?',
-    a: 'Assim que o pagamento é aprovado, você recebe o link de acesso a todos os PDFs e vídeos no seu e-mail e também pode acessar direto pelo celular — é tudo digital e imediato.',
+    a: 'Assim que o pagamento é aprovado, você recebe o link de acesso aos PDFs no seu e-mail e pode abrir direto pelo celular — é tudo digital e imediato.',
   },
   {
-    q: 'Preciso imprimir tudo colorido?',
-    a: 'O ideal é imprimir colorido para manter o visual original das casinhas e personagens, mas o material também funciona em impressão preto e branco se preferir economizar tinta.',
+    q: 'Para qual idade são as atividades?',
+    a: 'As atividades foram pensadas para crianças de 3 a 8 anos. Os menores costumam precisar de mais ajuda de um adulto; os maiores conseguem seguir o passo a passo com mais autonomia.',
   },
   {
-    q: 'Minha filha consegue montar sozinha?',
-    a: 'Crianças a partir de uns 6-7 anos costumam montar praticamente sozinhas com os guias em vídeo. Para as menininhas, recomendamos a ajuda de um adulto na hora de recortar.',
+    q: 'Preciso comprar materiais caros?',
+    a: 'Não. Cada atividade traz a lista do que separar, e a proposta é usar itens simples do dia a dia. No Kit Completo, o Guia de Materiais Caseiros e Substituições sugere alternativas quando faltar algo.',
   },
   {
-    q: 'Posso imprimir mais de uma vez?',
-    a: 'Sim! A licença é sua para sempre — pode imprimir quantas vezes quiser, para casa, para presentear ou até para usar em sala de aula.',
+    q: 'Preciso imprimir?',
+    a: 'Não necessariamente. Você pode consultar as atividades no celular, tablet ou computador e imprimir só o que quiser. Os moldes do Kit Completo são feitos para impressão.',
   },
   {
-    q: 'Funciona em qualquer impressora?',
-    a: 'Sim, os arquivos são em PDF padrão A4/Carta e funcionam em impressoras jato de tinta ou laser, em casa ou em uma gráfica/lan house.',
+    q: 'Qual a diferença entre o Kit Básico e o Kit Completo?',
+    a: 'O Kit Básico traz as +200 atividades em PDF, com materiais e passo a passo. O Kit Completo inclui tudo isso e mais os 4 bônus: 30 Desafios Criativos de até 15 minutos, Kit de Moldes para Recortar e Montar, Guia de Materiais Caseiros e Substituições e Calendário de 30 Dias de Diversão.',
   },
   {
-    q: 'Como recebo os bônus?',
-    a: 'Todos os bônus (cenário interativo, carrinho de bebê, kit médico e guarda-roupa) já vêm inclusos no mesmo pacote de arquivos, sem custo extra.',
+    q: 'Posso usar mais de uma vez?',
+    a: 'Sim! O material é seu para sempre — pode consultar e imprimir quantas vezes quiser.',
   },
 ]
 
@@ -142,38 +145,64 @@ export const guarantee = {
   badgeLabel: '7 dias',
   badgeCaption: 'Garantia',
   title: '7 Dias de Garantia Incondicional',
-  body: 'Se você não amar o material, devolvemos 100% do seu dinheiro.',
+  body: 'Se você não gostar do material, devolvemos 100% do seu dinheiro.',
   footnote: 'Sem perguntas. Sem burocracia.',
 }
 
+// [DEPOIMENTOS REAIS] — substituir pelos depoimentos de clientes.
+// Usar nomes e prints somente com autorização de quem enviou.
 export const testimonials = [
-  { image: 'depoimento1', alt: 'Print de conversa no WhatsApp: mãe contando que a filha ficou horas brincando com o kit e não pediu o celular.' },
-  { image: 'depoimento2', alt: 'Print de conversa no WhatsApp: mãe elogiando a qualidade do material e o suporte.' },
-  { image: 'depoimento3', alt: 'Print de conversa no WhatsApp: mãe agradecendo pelo presente que a filha amou.' },
+  { id: 'depoimento-1', text: '[DEPOIMENTOS REAIS]' },
+  { id: 'depoimento-2', text: '[DEPOIMENTOS REAIS]' },
+  { id: 'depoimento-3', text: '[DEPOIMENTOS REAIS]' },
 ]
 
-export const offerContent = {
-  title: 'Kit completo de brincadeiras criativas',
-  subtitle: 'Tudo o que sua filha precisa para criar um mundo inteiro usando apenas papel, tesoura e muita imaginação.',
-  priceLabel: 'por apenas',
-  installmentLabel: 'Pagamento único',
-  ctaLabel: 'Quero ver minha filha brincando',
+export const offerSection = {
+  eyebrow: 'Escolha seu kit',
+  title: 'Escolha o kit ideal para sua família',
 }
 
-export const offerIncludes = [
-  '30 Casinhas Interativas',
-  '10 Personagens Exclusivos',
-  'Roupinhas e acessórios',
-  '2 Kits de Bebê',
-  '+1200 Atividades',
-  'Suporte pelo WhatsApp',
-  'Guias de montagem em Vídeo',
-  'Imprima quantas vezes quiser',
-]
+export const offers = {
+  basic: {
+    name: 'Kit Básico',
+    subtitle: '+200 atividades criativas para fazer em casa.',
+    price: 'R$ 10,00',
+    priceLabel: 'por apenas',
+    installmentLabel: 'Pagamento único',
+    includes: ['+200 atividades em PDF', 'Materiais de cada atividade', 'Passo a passo', 'Garantia de 7 dias'],
+    ctaLabel: 'Quero o kit básico',
+  },
+  complete: {
+    name: 'Kit Completo',
+    badge: 'Atividades + 4 bônus',
+    subtitle: 'Tudo do Kit Básico mais os 4 bônus.',
+    price: 'R$ 19,90',
+    priceLabel: 'por apenas',
+    installmentLabel: 'Pagamento único',
+    includes: [
+      'Tudo do Kit Básico',
+      '30 Desafios Criativos de até 15 minutos',
+      'Kit de Moldes para Recortar e Montar',
+      'Guia de Materiais Caseiros e Substituições',
+      'Calendário de 30 Dias de Diversão',
+    ],
+    ctaLabel: 'Quero o kit completo',
+  },
+}
 
 export const offerBadges = ['Garantia de 7 dias', 'Acesso imediato', 'Arquivos digitais', 'Compra segura']
 
+export const upsellModal = {
+  title: 'Você está prestes a levar o básico sem os 4 bônus.',
+  subtitle: 'Leve o Kit Completo, com as +200 atividades e os 4 bônus, por um valor especial:',
+  bonusItems: bonuses.items.map((item) => item.title),
+  fromPrice: offers.complete.price,
+  price: UPSELL_PRICE,
+  ctaLabel: 'Sim, quero o completo',
+  declineLabel: 'Não, prefiro continuar com o básico por R$10,00',
+}
+
 export const preCheckoutOffer = {
-  title: 'Kit 30 Casinhas de Boneca + bônus',
-  items: ['30 casinhas interativas', '10 personagens + roupinhas', '+1200 atividades e jogo UNO', '4 bônus exclusivos grátis'],
+  title: '+200 Atividades Criativas para Fazer em Casa',
+  items: ['+200 atividades em PDF', 'Lista de materiais em cada atividade', 'Passo a passo', 'Garantia de 7 dias'],
 }

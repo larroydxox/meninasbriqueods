@@ -9,22 +9,22 @@ export default function FaqAccordion() {
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-2xl px-5 sm:px-8">
-        <SectionHeading eyebrow="Dúvidas frequentes" title="Perguntas que toda mãe faz antes de comprar" />
+        <SectionHeading eyebrow="Dúvidas frequentes" title="Perguntas frequentes antes de comprar" />
 
         <div className="flex flex-col gap-3">
           {faqItems.map((item, i) => {
             const isOpen = openIndex === i
             return (
-              <Reveal key={item.q} delay={i * 60} className="overflow-hidden rounded-2xl border border-pink-100 bg-cream-100">
+              <Reveal key={item.q} delay={i * 60} className="overflow-hidden rounded-2xl border border-taupe-100 bg-cream-100">
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left"
                 >
-                  <span className="font-display text-sm font-semibold text-pink-900 sm:text-base">{item.q}</span>
+                  <span className="font-display text-sm font-semibold text-taupe-900 sm:text-base">{item.q}</span>
                   <span
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-pink-500 text-white transition-transform duration-300 ${
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-taupe-500 text-white transition-transform duration-300 ${
                       isOpen ? 'rotate-45' : ''
                     }`}
                   >
@@ -38,7 +38,7 @@ export default function FaqAccordion() {
                   style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-4 text-sm leading-relaxed text-pink-900/70 sm:text-base">{item.a}</p>
+                    <p className="px-5 pb-4 text-sm leading-relaxed text-taupe-900/70 sm:text-base">{item.a}</p>
                   </div>
                 </div>
               </Reveal>
