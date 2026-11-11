@@ -4,7 +4,7 @@
 // Checkouts (Payt). Os preços exibidos na página precisam ser iguais aos configurados em cada checkout.
 // Kit Básico — R$10,00
 export const CHECKOUT_URL = 'https://checkout.payt.com.br/c9ebe7a518f77dae514b1027632c7cd5'
-// Kit Completo — R$20,00
+// Kit Completo — R$19,90
 export const CHECKOUT_URL_COMPLETO = 'https://checkout.payt.com.br/98f9cb2ec5d6e38bcbfc480c145839c8'
 // Oferta do modal (Kit Completo por R$15,00)
 export const CHECKOUT_URL_UPSELL = 'https://checkout.payt.com.br/1497276bcda3493e32816d2ab64f396e'
@@ -90,7 +90,7 @@ export const perfectFor = {
 export const bonuses = {
   title: 'Os 4 bônus do Kit Completo',
   subtitle: 'Materiais extras que acompanham o Kit Completo.',
-  footerLabel: 'Os 4 bônus estão inclusos no Kit Completo por R$20,00',
+  footerLabel: 'Os 4 bônus estão inclusos no Kit Completo por R$19,90',
   items: [
     { title: '30 Desafios Criativos de até 15 minutos', text: 'Propostas rápidas para quando o tempo é curto.', icon: 'clock', image: 'bonusDesafios' },
     { title: 'Kit de Moldes para Recortar e Montar', text: 'Moldes prontos para imprimir, recortar e montar.', icon: 'scissors', image: 'bonusMoldes' },
@@ -179,7 +179,7 @@ export const offers = {
     imageAlt: 'Kit Completo: +200 atividades criativas e os 4 bônus, material digital em PDF',
     badge: 'Atividades + 4 bônus',
     subtitle: 'Tudo do Kit Básico mais os 4 bônus.',
-    price: 'R$ 20,00',
+    price: 'R$ 19,90',
     priceLabel: 'por apenas',
     installmentLabel: 'Pagamento único',
     includes: [
