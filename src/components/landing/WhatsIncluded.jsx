@@ -32,16 +32,16 @@ export default function WhatsIncluded() {
             <Reveal
               key={item.title}
               delay={(i % 4) * 80}
-              className="flex items-center gap-4 rounded-2xl border border-taupe-100 bg-white p-4 shadow-softer transition-transform duration-200 hover:-translate-y-0.5"
+              className="flex items-center gap-4 rounded-2xl border border-brand-100 bg-white p-4 shadow-softer transition-transform duration-200 hover:-translate-y-0.5"
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-taupe-100 text-taupe-600">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-600">
                 <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   {icons[i % icons.length]}
                 </svg>
               </span>
               <div>
-                <h3 className="font-display text-sm font-semibold text-taupe-900 sm:text-base">{item.title}</h3>
-                <p className="mt-0.5 text-xs text-taupe-900/65 sm:text-sm">{item.text}</p>
+                <h3 className="font-display text-sm font-semibold text-brand-900 sm:text-base">{item.title}</h3>
+                <p className="mt-0.5 text-xs text-brand-900/65 sm:text-sm">{item.text}</p>
               </div>
             </Reveal>
           ))}

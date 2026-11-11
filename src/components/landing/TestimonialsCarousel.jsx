@@ -29,7 +29,7 @@ export default function TestimonialsCarousel() {
   }
 
   return (
-    <section className="bg-taupe-900 py-16 sm:py-20">
+    <section className="bg-brand-900 py-16 sm:py-20">
       <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
         <SectionHeading
           light
@@ -44,7 +44,7 @@ export default function TestimonialsCarousel() {
             type="button"
             onClick={() => scrollToIndex(active - 1)}
             aria-label="Depoimento anterior"
-            className="absolute left-0 top-1/2 z-10 hidden -translate-x-4 -translate-y-1/2 items-center justify-center rounded-full bg-white p-2.5 text-taupe-700 shadow-soft transition hover:scale-105 sm:flex disabled:opacity-30"
+            className="absolute left-0 top-1/2 z-10 hidden -translate-x-4 -translate-y-1/2 items-center justify-center rounded-full bg-white p-2.5 text-brand-700 shadow-soft transition hover:scale-105 sm:flex disabled:opacity-30"
             disabled={active === 0}
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -55,7 +55,7 @@ export default function TestimonialsCarousel() {
             type="button"
             onClick={() => scrollToIndex(active + 1)}
             aria-label="Próximo depoimento"
-            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-4 items-center justify-center rounded-full bg-white p-2.5 text-taupe-700 shadow-soft transition hover:scale-105 sm:flex disabled:opacity-30"
+            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-4 items-center justify-center rounded-full bg-white p-2.5 text-brand-700 shadow-soft transition hover:scale-105 sm:flex disabled:opacity-30"
             disabled={active === testimonials.length - 1}
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

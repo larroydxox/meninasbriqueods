@@ -15,10 +15,10 @@ export default function WhyMomsChoose() {
 
         <div className="w-full lg:w-3/5">
           <Reveal>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-taupe-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-taupe-600">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-600">
               {whyMomsChoose.eyebrow}
             </span>
-            <h2 className="mt-4 text-3xl leading-tight text-taupe-900 sm:text-4xl">{whyMomsChoose.title}</h2>
+            <h2 className="mt-4 text-3xl leading-tight text-brand-900 sm:text-4xl">{whyMomsChoose.title}</h2>
           </Reveal>
 
           <ul className="mt-6 flex flex-col gap-3">
@@ -27,14 +27,14 @@ export default function WhyMomsChoose() {
                 as="li"
                 key={reason}
                 delay={i * 80}
-                className="flex items-start gap-3 rounded-2xl bg-taupe-50 p-3.5 sm:p-4"
+                className="flex items-start gap-3 rounded-2xl bg-brand-50 p-3.5 sm:p-4"
               >
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-taupe-500 text-white">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white">
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="m5 13 4 4L19 7" />
                   </svg>
                 </span>
-                <span className="text-sm font-semibold text-taupe-900 sm:text-base">{reason}</span>
+                <span className="text-sm font-semibold text-brand-900 sm:text-base">{reason}</span>
               </Reveal>
             ))}
           </ul>

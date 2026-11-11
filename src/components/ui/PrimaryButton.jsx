@@ -5,10 +5,10 @@ const base =
 
 const variants = {
   primary:
-    'bg-gradient-to-r from-taupe-500 via-taupe-500 to-taupe-600 text-white hover:brightness-105 hover:-translate-y-0.5',
-  gold: 'bg-gradient-to-r from-gold-400 to-gold-500 text-taupe-900 hover:brightness-105 hover:-translate-y-0.5',
-  ghost: 'border-2 border-taupe-300 bg-white text-taupe-600 hover:bg-taupe-50',
-  bloom: 'bg-gradient-to-r from-taupe-500 to-lilac-500 text-white hover:brightness-105 hover:-translate-y-0.5',
+    'bg-gradient-to-r from-brand-500 via-brand-500 to-brand-600 text-white hover:brightness-105 hover:-translate-y-0.5',
+  gold: 'bg-gradient-to-r from-gold-400 to-gold-500 text-brand-900 hover:brightness-105 hover:-translate-y-0.5',
+  ghost: 'border-2 border-brand-300 bg-white text-brand-600 hover:bg-brand-50',
+  bloom: 'bg-gradient-to-r from-brand-500 to-lilac-500 text-white hover:brightness-105 hover:-translate-y-0.5',
 }
 
 /**

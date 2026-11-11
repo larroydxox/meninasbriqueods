@@ -24,29 +24,29 @@ function OfferCard({ offer, highlighted = false, ctaProps }) {
       }`}
     >
       {offer.badge && (
-        <span className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-400 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-wide text-taupe-900 shadow-softer sm:text-sm">
+        <span className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-400 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-wide text-brand-900 shadow-softer sm:text-sm">
           {offer.badge}
         </span>
       )}
 
       <h2 className="font-display text-2xl font-bold sm:text-3xl">
         <span aria-hidden="true">✨ </span>
-        <span className="bg-gradient-to-r from-taupe-600 to-lilac-600 bg-clip-text text-transparent">{offer.name}</span>
+        <span className="bg-gradient-to-r from-brand-600 to-lilac-600 bg-clip-text text-transparent">{offer.name}</span>
       </h2>
-      <p className="mx-auto mt-3 max-w-sm text-sm text-taupe-900/70 sm:text-base lg:mx-0">{offer.subtitle}</p>
+      <p className="mx-auto mt-3 max-w-sm text-sm text-brand-900/70 sm:text-base lg:mx-0">{offer.subtitle}</p>
 
       <div className="mt-6 flex flex-col items-center gap-0.5 lg:items-start">
         <span className="text-sm font-bold uppercase tracking-wide text-lilac-600">{offer.priceLabel}</span>
-        <span className="font-display text-5xl font-bold text-taupe-600">{offer.price}</span>
-        <span className="text-xs font-semibold text-taupe-900/50">{offer.installmentLabel}</span>
+        <span className="font-display text-5xl font-bold text-brand-600">{offer.price}</span>
+        <span className="text-xs font-semibold text-brand-900/50">{offer.installmentLabel}</span>
       </div>
 
       <ul className="mx-auto mb-8 mt-7 flex max-w-sm flex-col gap-3 lg:mx-0 lg:max-w-none">
         {offer.includes.map((item, i) => (
-          <li key={item} className="flex items-center gap-2.5 text-left text-sm font-semibold text-taupe-900">
+          <li key={item} className="flex items-center gap-2.5 text-left text-sm font-semibold text-brand-900">
             <span
               className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white ${
-                i % 2 === 0 ? 'bg-taupe-500' : 'bg-lilac-500'
+                i % 2 === 0 ? 'bg-brand-500' : 'bg-lilac-500'
               }`}
             >
               <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -65,7 +65,7 @@ function OfferCard({ offer, highlighted = false, ctaProps }) {
 
       <div className="mx-auto mt-6 grid max-w-sm grid-cols-2 gap-x-4 gap-y-2.5 lg:mx-0 lg:max-w-none">
         {offerBadges.map((badge) => (
-          <span key={badge} className="flex items-center gap-1.5 text-left text-xs font-semibold text-taupe-900/70">
+          <span key={badge} className="flex items-center gap-1.5 text-left text-xs font-semibold text-brand-900/70">
             <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-lilac-500" fill="currentColor" aria-hidden="true">
               {badgeIcons[badge]}
             </svg>
@@ -81,7 +81,7 @@ export default function OfferSection() {
   const [upsellOpen, setUpsellOpen] = useState(false)
 
   return (
-    <section id="oferta" className="bg-gradient-to-b from-lilac-100 via-taupe-50 to-cream-50 py-16 sm:py-20">
+    <section id="oferta" className="bg-gradient-to-b from-lilac-100 via-brand-50 to-cream-50 py-16 sm:py-20">
       <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
         <SectionHeading eyebrow={offerSection.eyebrow} title={offerSection.title} />
 

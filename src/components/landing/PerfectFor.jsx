@@ -6,7 +6,7 @@ export default function PerfectFor() {
     <section className="bg-white py-14 sm:py-16">
       <div className="mx-auto w-full max-w-3xl px-5 text-center sm:px-8">
         <Reveal>
-          <h2 className="text-2xl text-taupe-900 sm:text-3xl">{perfectFor.title}</h2>
+          <h2 className="text-2xl text-brand-900 sm:text-3xl">{perfectFor.title}</h2>
         </Reveal>
 
         <div className="mt-6 flex flex-wrap justify-center gap-2.5">
@@ -15,7 +15,7 @@ export default function PerfectFor() {
               as="span"
               key={tag}
               delay={i * 60}
-              className="rounded-full border-2 border-taupe-200 bg-taupe-50 px-4 py-2 text-sm font-bold text-taupe-700 sm:text-base"
+              className="rounded-full border-2 border-brand-200 bg-brand-50 px-4 py-2 text-sm font-bold text-brand-700 sm:text-base"
             >
               {tag}
             </Reveal>

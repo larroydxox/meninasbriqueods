@@ -15,16 +15,16 @@ export default function FaqAccordion() {
           {faqItems.map((item, i) => {
             const isOpen = openIndex === i
             return (
-              <Reveal key={item.q} delay={i * 60} className="overflow-hidden rounded-2xl border border-taupe-100 bg-cream-100">
+              <Reveal key={item.q} delay={i * 60} className="overflow-hidden rounded-2xl border border-brand-100 bg-cream-100">
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left"
                 >
-                  <span className="font-display text-sm font-semibold text-taupe-900 sm:text-base">{item.q}</span>
+                  <span className="font-display text-sm font-semibold text-brand-900 sm:text-base">{item.q}</span>
                   <span
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-taupe-500 text-white transition-transform duration-300 ${
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white transition-transform duration-300 ${
                       isOpen ? 'rotate-45' : ''
                     }`}
                   >
@@ -38,7 +38,7 @@ export default function FaqAccordion() {
                   style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-4 text-sm leading-relaxed text-taupe-900/70 sm:text-base">{item.a}</p>
+                    <p className="px-5 pb-4 text-sm leading-relaxed text-brand-900/70 sm:text-base">{item.a}</p>
                   </div>
                 </div>
               </Reveal>

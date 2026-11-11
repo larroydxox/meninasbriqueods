@@ -4,7 +4,7 @@ import PrimaryButton from '../ui/PrimaryButton.jsx'
 
 export default function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-taupe-600 via-taupe-500 to-lilac-500 py-16 text-center sm:py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-600 via-brand-500 to-lilac-500 py-16 text-center sm:py-20">
       <div className="pointer-events-none absolute -top-10 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-white/10 blur-3xl" />
       <div className="relative mx-auto flex w-full max-w-2xl flex-col items-center gap-5 px-5 sm:px-8">
         <Reveal>

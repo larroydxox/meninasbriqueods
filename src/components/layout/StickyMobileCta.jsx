@@ -18,15 +18,15 @@ export default function StickyMobileCta() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-40 border-t border-taupe-100 bg-white/95 px-4 py-3 shadow-[0_-8px_24px_-8px_rgba(127,111,96,0.25)] backdrop-blur transition-transform duration-300 sm:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-brand-100 bg-white/95 px-4 py-3 shadow-[0_-8px_24px_-8px_rgba(71,109,212,0.25)] backdrop-blur transition-transform duration-300 sm:hidden ${
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
       style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))' }}
     >
       <div className="flex items-center justify-between gap-3">
         <div className="leading-tight">
-          <p className="whitespace-nowrap text-[11px] font-bold uppercase tracking-wide text-taupe-900/50">A partir de</p>
-          <p className="font-display text-xl font-bold text-taupe-600">{PRICE.to}</p>
+          <p className="whitespace-nowrap text-[11px] font-bold uppercase tracking-wide text-brand-900/50">A partir de</p>
+          <p className="font-display text-xl font-bold text-brand-600">{PRICE.to}</p>
         </div>
         <PrimaryButton href={CHECKOUT_URL} icon={false} className="!px-5 !py-3 !text-sm">
           Quero o kit

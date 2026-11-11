@@ -36,18 +36,18 @@ export default function BonusSection() {
             <Reveal
               key={item.title}
               delay={i * 90}
-              className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-softer ring-1 ring-taupe-100"
+              className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-softer ring-1 ring-brand-100"
             >
-              <div className="relative aspect-square w-full overflow-hidden bg-taupe-50">
-                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-lilac-200 to-taupe-200">
+              <div className="relative aspect-square w-full overflow-hidden bg-brand-50">
+                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-lilac-200 to-brand-200">
                   <svg viewBox="0 0 24 24" className="h-12 w-12 text-lilac-600" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
                     {bonusIcons[item.icon]}
                   </svg>
                 </div>
               </div>
               <div className="flex flex-1 flex-col gap-1 p-3.5">
-                <h3 className="font-display text-sm font-semibold leading-tight text-taupe-900 sm:text-base">{item.title}</h3>
-                <p className="text-xs leading-snug text-taupe-900/65 sm:text-sm">{item.text}</p>
+                <h3 className="font-display text-sm font-semibold leading-tight text-brand-900 sm:text-base">{item.title}</h3>
+                <p className="text-xs leading-snug text-brand-900/65 sm:text-sm">{item.text}</p>
                 <span className="mt-auto pt-2 text-xs font-bold uppercase tracking-wide text-lilac-600">No Kit Completo</span>
               </div>
             </Reveal>
@@ -55,7 +55,7 @@ export default function BonusSection() {
         </div>
 
         <Reveal delay={300} className="mt-8 flex flex-col items-center justify-center gap-2 text-center">
-          <span className="rounded-full bg-gold-400 px-5 py-2 font-display text-base font-bold text-taupe-900 shadow-softer">
+          <span className="rounded-full bg-gold-400 px-5 py-2 font-display text-base font-bold text-brand-900 shadow-softer">
             {bonuses.footerLabel}
           </span>
         </Reveal>

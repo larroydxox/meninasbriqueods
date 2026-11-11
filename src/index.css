@@ -1,18 +1,18 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Neutro quente (taupe) como cor dominante — mesma luminância/contraste da escala anterior */
-  --color-taupe-50: #f9f8f6;
-  --color-taupe-100: #efeae6;
-  --color-taupe-200: #dad2cb;
-  --color-taupe-300: #bfb6ac;
-  --color-taupe-400: #a4988c;
-  --color-taupe-500: #938373;
-  --color-taupe-600: #7f6f60;
-  --color-taupe-700: #66594c;
-  --color-taupe-800: #4e4339;
-  --color-taupe-900: #352d24;
-  --color-taupe-950: #2d251e;
+  /* Azul suave (periwinkle) como cor dominante — mesma luminância/contraste por tom da escala original */
+  --color-brand-50: #f3f8ff;
+  --color-brand-100: #deedfe;
+  --color-brand-200: #b7d6fb;
+  --color-brand-300: #8eb9f6;
+  --color-brand-400: #679aee;
+  --color-brand-500: #5483e3;
+  --color-brand-600: #476dd4;
+  --color-brand-700: #3451c3;
+  --color-brand-800: #2b3d95;
+  --color-brand-900: #1e2867;
+  --color-brand-950: #181f5e;
 
   /* Lilás complementar */
   --color-lilac-50: #f7f3fd;
@@ -38,7 +38,7 @@
   --font-display: 'Fredoka', ui-rounded, 'Baloo 2', system-ui, sans-serif;
   --font-body: 'Nunito', ui-rounded, system-ui, sans-serif;
 
-  --shadow-soft: 0 10px 30px -8px rgba(127, 111, 96, 0.25);
+  --shadow-soft: 0 10px 30px -8px rgba(71, 109, 212, 0.25);
   --shadow-softer: 0 6px 20px -6px rgba(138, 95, 207, 0.18);
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -58,7 +58,7 @@
   body {
     margin: 0;
     font-family: var(--font-body);
-    color: var(--color-taupe-900);
+    color: var(--color-brand-900);
     background: var(--color-cream-50);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -75,8 +75,8 @@
   }
 
   ::selection {
-    background: var(--color-taupe-200);
-    color: var(--color-taupe-900);
+    background: var(--color-brand-200);
+    color: var(--color-brand-900);
   }
 }
 
@@ -173,8 +173,8 @@
   display: none;
 }
 
-.text-gradient-taupe {
-  background: linear-gradient(92deg, var(--color-taupe-600), var(--color-taupe-400) 55%, var(--color-gold-500));
+.text-gradient-brand {
+  background: linear-gradient(92deg, var(--color-brand-600), var(--color-brand-400) 55%, var(--color-gold-500));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

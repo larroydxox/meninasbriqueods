@@ -14,8 +14,8 @@ export default function SkillsDeveloped() {
               <span className="absolute -left-[38px] flex h-8 w-8 items-center justify-center rounded-full bg-lilac-500 font-display text-sm font-bold text-white shadow-softer">
                 {i + 1}
               </span>
-              <h3 className="font-display text-base font-semibold text-taupe-900 sm:text-lg">{skill.title}</h3>
-              <p className="mt-1 text-sm text-taupe-900/70 sm:text-base">{skill.text}</p>
+              <h3 className="font-display text-base font-semibold text-brand-900 sm:text-lg">{skill.title}</h3>
+              <p className="mt-1 text-sm text-brand-900/70 sm:text-base">{skill.text}</p>
             </Reveal>
           ))}
         </ol>

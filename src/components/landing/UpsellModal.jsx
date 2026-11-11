@@ -33,7 +33,7 @@ export default function UpsellModal({ open }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-taupe-950/60 px-4 py-6 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 px-4 py-6 backdrop-blur-sm animate-fade-in"
       onClick={goToBasicCheckout}
     >
       <div
@@ -47,21 +47,21 @@ export default function UpsellModal({ open }) {
           type="button"
           onClick={goToBasicCheckout}
           aria-label="Fechar e continuar com o kit básico"
-          className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-taupe-50 text-taupe-900/60 transition hover:bg-taupe-100"
+          className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-brand-50 text-brand-900/60 transition hover:bg-brand-100"
         >
           <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" aria-hidden="true">
             <path d="M6 6l12 12M18 6 6 18" />
           </svg>
         </button>
 
-        <h2 id="upsell-title" className="mt-2 font-display text-xl font-bold leading-tight text-taupe-900 sm:text-2xl">
+        <h2 id="upsell-title" className="mt-2 font-display text-xl font-bold leading-tight text-brand-900 sm:text-2xl">
           {upsellModal.title}
         </h2>
-        <p className="mt-3 text-sm text-taupe-900/70 sm:text-base">{upsellModal.subtitle}</p>
+        <p className="mt-3 text-sm text-brand-900/70 sm:text-base">{upsellModal.subtitle}</p>
 
         <ul className="mt-5 flex flex-col gap-2 text-left">
           {upsellModal.bonusItems.map((item) => (
-            <li key={item} className="flex items-center gap-2.5 text-sm font-semibold text-taupe-900">
+            <li key={item} className="flex items-center gap-2.5 text-sm font-semibold text-brand-900">
               <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-lilac-500 text-white">
                 <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="m5 13 4 4L19 7" />
@@ -73,10 +73,10 @@ export default function UpsellModal({ open }) {
         </ul>
 
         <div className="mt-6 flex flex-col items-center gap-0.5">
-          <span className="text-sm text-taupe-900/45">
+          <span className="text-sm text-brand-900/45">
             Kit Completo de <span className="line-through">{upsellModal.fromPrice}</span> por
           </span>
-          <span className="font-display text-4xl font-bold text-taupe-600">{upsellModal.price}</span>
+          <span className="font-display text-4xl font-bold text-brand-600">{upsellModal.price}</span>
         </div>
 
         <PrimaryButton ref={primaryRef} href={CHECKOUT_URL_UPSELL} variant="bloom" icon={false} className="mt-6 w-full sm:w-full">
@@ -85,7 +85,7 @@ export default function UpsellModal({ open }) {
 
         <a
           href={CHECKOUT_URL}
-          className="mt-4 inline-block text-xs font-semibold text-taupe-900/50 underline underline-offset-2 sm:text-sm"
+          className="mt-4 inline-block text-xs font-semibold text-brand-900/50 underline underline-offset-2 sm:text-sm"
         >
           {upsellModal.declineLabel}
         </a>

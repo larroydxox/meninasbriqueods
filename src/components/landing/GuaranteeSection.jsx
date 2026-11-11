@@ -6,7 +6,7 @@ export default function GuaranteeSection() {
     <section className="bg-cream-50 py-12 sm:py-16">
       <div className="mx-auto w-full max-w-4xl px-5 sm:px-8">
         <Reveal className="flex flex-col items-center gap-6 rounded-[2rem] bg-gradient-to-br from-gold-200/70 to-cream-200 p-8 text-center shadow-softer sm:flex-row sm:gap-8 sm:p-10 sm:text-left">
-          <div className="flex h-28 w-28 shrink-0 flex-col items-center justify-center rounded-full bg-taupe-500 text-white shadow-soft">
+          <div className="flex h-28 w-28 shrink-0 flex-col items-center justify-center rounded-full bg-brand-500 text-white shadow-soft">
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true">
               <path d="M12 2 4 5v6c0 5.2 3.4 9.4 8 11 4.6-1.6 8-5.8 8-11V5l-8-3Z" />
               <path d="m8.5 12 2.4 2.4L15.5 9.6" strokeLinecap="round" />
@@ -16,9 +16,9 @@ export default function GuaranteeSection() {
           </div>
 
           <div>
-            <h2 className="text-2xl text-taupe-900 sm:text-3xl">{guarantee.title}</h2>
-            <p className="mt-2 text-base font-semibold text-taupe-900/80 sm:text-lg">{guarantee.body}</p>
-            <p className="mt-1 text-sm text-taupe-900/60 sm:text-base">{guarantee.footnote}</p>
+            <h2 className="text-2xl text-brand-900 sm:text-3xl">{guarantee.title}</h2>
+            <p className="mt-2 text-base font-semibold text-brand-900/80 sm:text-lg">{guarantee.body}</p>
+            <p className="mt-1 text-sm text-brand-900/60 sm:text-base">{guarantee.footnote}</p>
           </div>
         </Reveal>
       </div>
