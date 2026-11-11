@@ -95,7 +95,7 @@ export const bonuses = {
     { title: '30 Desafios Criativos de até 15 minutos', text: 'Propostas rápidas para quando o tempo é curto.', icon: 'clock', image: 'bonusDesafios' },
     { title: 'Kit de Moldes para Recortar e Montar', text: 'Moldes prontos para imprimir, recortar e montar.', icon: 'scissors', image: 'bonusMoldes' },
     { title: 'Guia de Materiais Caseiros e Substituições', text: 'O que usar quando falta algum material.', icon: 'list', image: 'bonusMateriais' },
-    { title: 'Calendário de 30 Dias de Diversão', text: 'Uma sugestão por dia para organizar o mês.', icon: 'calendar' },
+    { title: 'Calendário de 30 Dias de Diversão', text: 'Uma sugestão por dia para organizar o mês.', icon: 'calendar', image: 'bonusCalendario' },
   ],
 }
 

@@ -4,6 +4,7 @@ import planoCompleto from './img/plano-completo.webp'
 import bonusDesafios from './img/bonus-1-desafios.webp'
 import bonusMoldes from './img/bonus-2-moldes.webp'
 import bonusMateriais from './img/bonus-3-materiais.webp'
+import bonusCalendario from './img/bonus-4-calendario.webp'
 import depoimento1 from './img/depoimento-1.webp'
 import depoimento2 from './img/depoimento-2.webp'
 import depoimento3 from './img/depoimento-3.webp'
@@ -17,6 +18,7 @@ export const images = {
   bonusDesafios,
   bonusMoldes,
   bonusMateriais,
+  bonusCalendario,
   depoimento1,
   depoimento2,
   depoimento3,
