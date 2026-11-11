@@ -1,4 +1,4 @@
-import { heroContent, CHECKOUT_URL } from '../../data/content.js'
+import { heroContent } from '../../data/content.js'
 import PrimaryButton from '../ui/PrimaryButton.jsx'
 import Reveal from '../ui/Reveal.jsx'
 import VslPlayer from './VslPlayer.jsx'
@@ -10,8 +10,9 @@ export default function Hero() {
       <div className="pointer-events-none absolute -left-16 top-10 h-56 w-56 rounded-full bg-lilac-200/50 blur-3xl" />
       <div className="pointer-events-none absolute -right-10 top-40 h-64 w-64 rounded-full bg-gold-300/40 blur-3xl" />
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-5 sm:px-8 lg:flex-row lg:items-center lg:gap-14">
-        <Reveal className="order-2 flex w-full flex-col items-center text-center lg:order-1 lg:w-1/2 lg:items-start lg:text-left">
+      {/* Mobile: texto → VSL → botão. Desktop: texto + botão à esquerda, VSL à direita. */}
+      <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 justify-items-center gap-8 px-5 sm:px-8 lg:grid-cols-2 lg:gap-x-14 lg:gap-y-7">
+        <Reveal className="flex w-full flex-col items-center text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:self-end lg:text-left">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-600 shadow-softer">
             <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
               <path d="M12 2 3 6v6c0 5 3.8 9 9 10 5.2-1 9-5 9-10V6l-9-4Z" />
@@ -37,9 +38,15 @@ export default function Hero() {
               </li>
             ))}
           </ul>
+        </Reveal>
 
-          <div className="mt-7 flex w-full flex-col items-center gap-3 sm:items-start">
-            <PrimaryButton href={CHECKOUT_URL} className="w-full sm:w-auto">
+        <Reveal delay={150} className="w-full lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
+          <VslPlayer />
+        </Reveal>
+
+        <Reveal delay={200} className="w-full lg:col-start-1 lg:row-start-2 lg:self-start">
+          <div className="flex w-full flex-col items-center gap-3 lg:items-start">
+            <PrimaryButton href="#oferta" className="w-full sm:w-auto">
               {heroContent.ctaLabel}
             </PrimaryButton>
             <span className="flex items-center gap-1.5 text-xs font-semibold text-brand-900/60">
@@ -49,10 +56,6 @@ export default function Hero() {
               {heroContent.secureLabel}
             </span>
           </div>
-        </Reveal>
-
-        <Reveal delay={150} className="order-1 w-full lg:order-2 lg:w-1/2">
-          <VslPlayer />
         </Reveal>
       </div>
     </section>
