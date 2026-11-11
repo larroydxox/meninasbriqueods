@@ -2,6 +2,8 @@ import { useRef, useState } from 'react'
 import { testimonials } from '../../data/content.js'
 import Reveal from '../ui/Reveal.jsx'
 import SectionHeading from '../ui/SectionHeading.jsx'
+import LazyImage from '../ui/LazyImage.jsx'
+import { images } from '../../assets/index.js'
 
 export default function TestimonialsCarousel() {
   const trackRef = useRef(null)
@@ -61,19 +63,19 @@ export default function TestimonialsCarousel() {
             </svg>
           </button>
 
-          {/* [DEPOIMENTOS REAIS]: substituir pelos depoimentos em src/data/content.js — nomes e prints só com autorização */}
+          {/* Depoimentos: prints em src/assets/img/depoimento-*.webp, dados em src/data/content.js */}
           <div
             ref={trackRef}
             onScroll={onScroll}
-            className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-1 py-2"
+            className="no-scrollbar flex items-start snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-1 py-2"
           >
             {testimonials.map((item, i) => (
               <Reveal
-                key={item.id}
+                key={item.image}
                 delay={i * 100}
-                className="flex aspect-[9/16] w-[78%] shrink-0 snap-center items-center justify-center overflow-hidden rounded-3xl bg-white p-6 text-center shadow-soft sm:w-[42%] lg:w-[30%]"
+                className="w-[78%] shrink-0 snap-center overflow-hidden rounded-3xl bg-white shadow-soft sm:w-[42%] lg:w-[30%]"
               >
-                <span className="font-display text-lg font-semibold text-taupe-900/60">{item.text}</span>
+                <LazyImage src={images[item.image]} alt={item.alt} width={item.width} height={item.height} className="block h-auto w-full" />
               </Reveal>
             ))}
           </div>
@@ -81,7 +83,7 @@ export default function TestimonialsCarousel() {
           <div className="mt-5 flex justify-center gap-2 sm:hidden">
             {testimonials.map((item, i) => (
               <button
-                key={item.id}
+                key={item.image}
                 type="button"
                 aria-label={`Ir para depoimento ${i + 1}`}
                 onClick={() => scrollToIndex(i)}

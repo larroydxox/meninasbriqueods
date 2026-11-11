@@ -149,12 +149,13 @@ export const guarantee = {
   footnote: 'Sem perguntas. Sem burocracia.',
 }
 
-// [DEPOIMENTOS REAIS] — substituir pelos depoimentos de clientes.
-// Usar nomes e prints somente com autorização de quem enviou.
+// Depoimentos de clientes — prints usados com autorização de quem enviou.
 export const testimonials = [
-  { id: 'depoimento-1', text: '[DEPOIMENTOS REAIS]' },
-  { id: 'depoimento-2', text: '[DEPOIMENTOS REAIS]' },
-  { id: 'depoimento-3', text: '[DEPOIMENTOS REAIS]' },
+  { image: 'depoimento1', width: 720, height: 944, alt: 'Print de conversa: Rafael conta que montou o dinossauro de papel com o filho e que o passo a passo ajudou bastante.' },
+  { image: 'depoimento2', width: 720, height: 912, alt: 'Print de conversa no WhatsApp: Beatriz, mãe de dois, conta que os filhos agora pedem as atividades em vez do celular.' },
+  { image: 'depoimento3', width: 720, height: 928, alt: 'Print de conversa: Juliana Alves conta que fez 4 atividades em um dia e que a filha já pede para fazer mais.' },
+  { image: 'depoimento4', width: 720, height: 927, alt: 'Print de conversa: Maria Clara conta que fez a borboleta de papel com a filha de 5 anos.' },
+  { image: 'depoimento5', width: 720, height: 927, alt: 'Print de conversa no WhatsApp: Sandra Albuquerque elogia os bônus e o passo a passo das atividades.' },
 ]
 
 export const offerSection = {

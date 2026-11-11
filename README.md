@@ -33,7 +33,7 @@ Os pontos abaixo estão marcados com comentários `PLACEHOLDER` no código:
 | O quê | Onde |
 | --- | --- |
 | Vídeo da VSL | player da vturb (ConverteAI) em `src/components/landing/VslPlayer.jsx` |
-| Depoimentos | placeholders `[DEPOIMENTOS REAIS]` em `testimonials` (`src/data/content.js`) — nomes e prints só com autorização |
+| Depoimentos | prints autorizados em `src/assets/img/depoimento-*.webp`, listados em `testimonials` (`src/data/content.js`) |
 | Imagem do produto (caixa) | `src/assets/img/product-box.webp` |
 | Links reais do checkout | `CHECKOUT_URL` (Kit Básico, R$10), `CHECKOUT_URL_COMPLETO` (Kit Completo, R$19,90) e `CHECKOUT_URL_UPSELL` (oferta do modal, `UPSELL_PRICE`) em `src/data/content.js` |
 | Meta Pixel / Google Tag Manager | comentários no `<head>`/`<body>` de `index.html`, e evento de `InitiateCheckout` comentado em `src/pages/PreCheckout.jsx` |
