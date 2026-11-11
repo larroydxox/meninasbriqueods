@@ -1,15 +1,13 @@
 // Conteúdo central da página — copy em pt-BR do produto
 // "+200 Atividades Criativas para Fazer em Casa", distribuída entre as seções do funil.
 
-// Checkout do Kit Básico (R$10,00) — link real já em uso.
-export const CHECKOUT_URL = 'https://ggcheckout.app/checkout/v2/Nd0Ot8L5tJO6VkKRAUgR'
-
-// TODO: substituir pelo link real do checkout do Kit Completo (R$19,90).
-export const CHECKOUT_URL_COMPLETO = '#checkout-kit-completo'
-
-// TODO: substituir pelo link real do checkout da oferta do modal (Kit Completo por R$15,00).
-// O valor em UPSELL_PRICE abaixo precisa ser o mesmo configurado nesse checkout.
-export const CHECKOUT_URL_UPSELL = '#checkout-kit-completo-oferta'
+// Checkouts (Payt). Os preços exibidos na página precisam ser iguais aos configurados em cada checkout.
+// Kit Básico — R$10,00
+export const CHECKOUT_URL = 'https://checkout.payt.com.br/c9ebe7a518f77dae514b1027632c7cd5'
+// Kit Completo — R$20,00
+export const CHECKOUT_URL_COMPLETO = 'https://checkout.payt.com.br/98f9cb2ec5d6e38bcbfc480c145839c8'
+// Oferta do modal (Kit Completo por R$15,00)
+export const CHECKOUT_URL_UPSELL = 'https://checkout.payt.com.br/1497276bcda3493e32816d2ab64f396e'
 
 export const PRICE = {
   to: 'R$10',
@@ -92,11 +90,11 @@ export const perfectFor = {
 export const bonuses = {
   title: 'Os 4 bônus do Kit Completo',
   subtitle: 'Materiais extras que acompanham o Kit Completo.',
-  footerLabel: 'Os 4 bônus estão inclusos no Kit Completo por R$19,90',
+  footerLabel: 'Os 4 bônus estão inclusos no Kit Completo por R$20,00',
   items: [
-    { title: '30 Desafios Criativos de até 15 minutos', text: 'Propostas rápidas para quando o tempo é curto.', icon: 'clock' },
-    { title: 'Kit de Moldes para Recortar e Montar', text: 'Moldes prontos para imprimir, recortar e montar.', icon: 'scissors' },
-    { title: 'Guia de Materiais Caseiros e Substituições', text: 'O que usar quando falta algum material.', icon: 'list' },
+    { title: '30 Desafios Criativos de até 15 minutos', text: 'Propostas rápidas para quando o tempo é curto.', icon: 'clock', image: 'bonusDesafios' },
+    { title: 'Kit de Moldes para Recortar e Montar', text: 'Moldes prontos para imprimir, recortar e montar.', icon: 'scissors', image: 'bonusMoldes' },
+    { title: 'Guia de Materiais Caseiros e Substituições', text: 'O que usar quando falta algum material.', icon: 'list', image: 'bonusMateriais' },
     { title: 'Calendário de 30 Dias de Diversão', text: 'Uma sugestão por dia para organizar o mês.', icon: 'calendar' },
   ],
 }
@@ -166,6 +164,8 @@ export const offerSection = {
 export const offers = {
   basic: {
     name: 'Kit Básico',
+    image: 'planoBasico',
+    imageAlt: 'Kit Básico: +200 Atividades Criativas para fazer em casa, material digital em PDF',
     subtitle: '+200 atividades criativas para fazer em casa.',
     price: 'R$ 10,00',
     priceLabel: 'por apenas',
@@ -175,9 +175,11 @@ export const offers = {
   },
   complete: {
     name: 'Kit Completo',
+    image: 'planoCompleto',
+    imageAlt: 'Kit Completo: +200 atividades criativas e os 4 bônus, material digital em PDF',
     badge: 'Atividades + 4 bônus',
     subtitle: 'Tudo do Kit Básico mais os 4 bônus.',
-    price: 'R$ 19,90',
+    price: 'R$ 20,00',
     priceLabel: 'por apenas',
     installmentLabel: 'Pagamento único',
     includes: [

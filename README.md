@@ -34,8 +34,8 @@ Os pontos abaixo estão marcados com comentários `PLACEHOLDER` no código:
 | --- | --- |
 | Vídeo da VSL | player da vturb (ConverteAI) em `src/components/landing/VslPlayer.jsx` |
 | Depoimentos | prints autorizados em `src/assets/img/depoimento-*.webp`, listados em `testimonials` (`src/data/content.js`) |
-| Imagem do produto (caixa) | `src/assets/img/product-box.webp` |
-| Links reais do checkout | `CHECKOUT_URL` (Kit Básico, R$10), `CHECKOUT_URL_COMPLETO` (Kit Completo, R$19,90) e `CHECKOUT_URL_UPSELL` (oferta do modal, `UPSELL_PRICE`) em `src/data/content.js` |
+| Imagens dos kits e bônus | `src/assets/img/plano-*.webp` e `bonus-*.webp` |
+| Links reais do checkout | `CHECKOUT_URL` (Kit Básico, R$10), `CHECKOUT_URL_COMPLETO` (Kit Completo, R$20,00) e `CHECKOUT_URL_UPSELL` (oferta do modal, `UPSELL_PRICE`) em `src/data/content.js` |
 | Meta Pixel / Google Tag Manager | comentários no `<head>`/`<body>` de `index.html`, e evento de `InitiateCheckout` comentado em `src/pages/PreCheckout.jsx` |
 
 ## Copy e conteúdo

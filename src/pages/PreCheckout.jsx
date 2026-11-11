@@ -94,7 +94,7 @@ export default function PreCheckout() {
 
               <div className="overflow-hidden rounded-3xl bg-white shadow-soft">
                 <div className="flex items-center gap-4 border-b border-brand-100 p-5">
-                  <LazyImage src={images.productBox} alt="+200 Atividades Criativas para Fazer em Casa" className="h-20 w-14 shrink-0 object-contain" eager />
+                  <LazyImage src={images.planoBasico} alt="+200 Atividades Criativas para Fazer em Casa" className="h-20 w-20 shrink-0 rounded-xl object-cover" eager />
                   <div>
                     <h2 className="font-display text-sm font-semibold text-brand-900 sm:text-base">{preCheckoutOffer.title}</h2>
                     <div className="mt-1 flex items-baseline gap-2">

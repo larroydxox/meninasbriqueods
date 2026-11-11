@@ -3,6 +3,8 @@ import { offerSection, offers, offerBadges, CHECKOUT_URL_COMPLETO } from '../../
 import Reveal from '../ui/Reveal.jsx'
 import PrimaryButton from '../ui/PrimaryButton.jsx'
 import SectionHeading from '../ui/SectionHeading.jsx'
+import LazyImage from '../ui/LazyImage.jsx'
+import { images } from '../../assets/index.js'
 import UpsellModal from './UpsellModal.jsx'
 
 const badgeIcons = {
@@ -27,6 +29,16 @@ function OfferCard({ offer, highlighted = false, ctaProps }) {
         <span className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-400 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-wide text-brand-900 shadow-softer sm:text-sm">
           {offer.badge}
         </span>
+      )}
+
+      {offer.image && (
+        <LazyImage
+          src={images[offer.image]}
+          alt={offer.imageAlt}
+          width={800}
+          height={800}
+          className="mx-auto mb-6 aspect-square w-full max-w-xs rounded-3xl object-cover shadow-softer lg:max-w-none"
+        />
       )}
 
       <h2 className="font-display text-2xl font-bold sm:text-3xl">

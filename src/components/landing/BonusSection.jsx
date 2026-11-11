@@ -1,6 +1,8 @@
 import { bonuses } from '../../data/content.js'
 import Reveal from '../ui/Reveal.jsx'
 import SectionHeading from '../ui/SectionHeading.jsx'
+import LazyImage from '../ui/LazyImage.jsx'
+import { images } from '../../assets/index.js'
 
 const bonusIcons = {
   clock: (
@@ -39,11 +41,15 @@ export default function BonusSection() {
               className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-softer ring-1 ring-brand-100"
             >
               <div className="relative aspect-square w-full overflow-hidden bg-brand-50">
-                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-lilac-200 to-brand-200">
-                  <svg viewBox="0 0 24 24" className="h-12 w-12 text-lilac-600" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                    {bonusIcons[item.icon]}
-                  </svg>
-                </div>
+                {item.image ? (
+                  <LazyImage src={images[item.image]} alt={item.title} width={480} height={480} className="h-full w-full object-cover" />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-lilac-200 to-brand-200">
+                    <svg viewBox="0 0 24 24" className="h-12 w-12 text-lilac-600" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                      {bonusIcons[item.icon]}
+                    </svg>
+                  </div>
+                )}
               </div>
               <div className="flex flex-1 flex-col gap-1 p-3.5">
                 <h3 className="font-display text-sm font-semibold leading-tight text-brand-900 sm:text-base">{item.title}</h3>
