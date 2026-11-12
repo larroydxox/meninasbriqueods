@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import * as pdfjs from 'pdfjs-dist/legacy/build/pdf.mjs'
 import workerUrl from 'pdfjs-dist/legacy/build/pdf.worker.min.mjs?url'
-import { abrirEmOutraGuia, baixarMaterial, carregarMaterial } from '../api.js'
+import { abrirEmOutraGuia, baixarMaterial, urlDoMaterial } from '../api.js'
 import { Pontinhos, Spinner } from './Carregando.jsx'
 import { IconeBaixar, IconeExterno, IconeMais, IconeMenos, IconeVoltar } from './Icones.jsx'
 
@@ -96,7 +96,7 @@ function Pagina({ doc, numero, largura, proporcao, raiz }) {
   )
 }
 
-export default function PdfViewer({ material, token, onFechar, onAviso }) {
+export default function PdfViewer({ material, onFechar, onAviso }) {
   const area = useRef(null)
   const [raiz, setRaiz] = useState(null)
   const [estado, setEstado] = useState('carregando') // carregando | pronto | erro
@@ -134,25 +134,24 @@ export default function PdfViewer({ material, token, onFechar, onAviso }) {
     let documento = null
     setEstado('carregando')
     ;(async () => {
-      const blob = await carregarMaterial(material.id, token)
-      const dados = new Uint8Array(await blob.arrayBuffer())
-      documento = await pdfjs.getDocument({ data: dados }).promise
+      // pdf.js baixa o arquivo por partes (range requests): a primeira página aparece rápido.
+      documento = await pdfjs.getDocument({ url: urlDoMaterial(material) }).promise
       const primeira = await documento.getPage(1)
       const vp = primeira.getViewport({ scale: 1 })
       if (cancelado) return
       setProporcao(vp.height / vp.width)
       setDoc(documento)
       setEstado('pronto')
-    })().catch((e) => {
+    })().catch(() => {
       if (cancelado) return
-      setErro(e?.status !== undefined ? e.message : 'Não conseguimos mostrar este PDF aqui.')
+      setErro(navigator.onLine === false ? 'Parece que você está sem internet.' : 'Não conseguimos mostrar este PDF aqui.')
       setEstado('erro')
     })
     return () => {
       cancelado = true
       documento?.destroy()
     }
-  }, [material.id, token, tentativa])
+  }, [material, tentativa])
 
   const largura = Math.floor(larguraBase * ZOOMS[zoom])
 
@@ -173,19 +172,14 @@ export default function PdfViewer({ material, token, onFechar, onAviso }) {
     })
   }
 
-  const baixar = async () => {
+  const baixar = () => {
     setBaixando(true)
-    try {
-      await baixarMaterial(material, token)
-      onAviso?.('Download iniciado! 📥')
-    } catch (e) {
-      onAviso?.(e.message, 'erro')
-    } finally {
-      setBaixando(false)
-    }
+    baixarMaterial(material)
+    onAviso?.('Download iniciado! 📥')
+    setTimeout(() => setBaixando(false), 1200)
   }
 
-  const outraGuia = () => abrirEmOutraGuia(material, token).catch((e) => onAviso?.(e.message, 'erro'))
+  const outraGuia = () => abrirEmOutraGuia(material)
 
   return (
     <div role="dialog" aria-modal="true" aria-label={`Leitor: ${material.titulo}`} className="fixed inset-0 z-[60] flex flex-col bg-cream-100 animate-fade-in">

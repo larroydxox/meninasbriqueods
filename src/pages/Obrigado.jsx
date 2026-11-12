@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import usePaginaPrivada from '../app/usePaginaPrivada.js'
-import { buscarLinkDeAcesso } from '../app/api.js'
 
 const CONFETES = [
   { dx: '-70px', dy: '-60px', cor: 'bg-sun-400', delay: '0.55s' },
@@ -54,25 +53,6 @@ function IconeConcluido() {
 
 export default function Obrigado() {
   usePaginaPrivada('Obrigado! · Seu kit de atividades chegou')
-  const [link, setLink] = useState(null)
-  const [erro, setErro] = useState(null)
-  const [carregando, setCarregando] = useState(true)
-
-  const carregar = useCallback(async () => {
-    setCarregando(true)
-    setErro(null)
-    try {
-      setLink(await buscarLinkDeAcesso())
-    } catch (e) {
-      setErro(e.message)
-    } finally {
-      setCarregando(false)
-    }
-  }, [])
-
-  useEffect(() => {
-    carregar()
-  }, [carregar])
 
   return (
     <main className="relative flex min-h-[100svh] items-center overflow-hidden bg-cream-100 px-5 py-10">
@@ -96,30 +76,12 @@ export default function Obrigado() {
         </p>
 
         <div className="mt-8">
-          {link ? (
-            // <a> (recarrega a página) em vez de <Link>: assim os scripts de rastreamento carregados
-            // nesta página não continuam ativos dentro do app, onde a URL contém o token.
-            <a
-              href={link}
-              className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-500 to-lilac-500 px-6 py-5 font-display text-lg font-semibold text-white shadow-soft transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
-            >
-              🎨 Acessar minhas atividades
-            </a>
-          ) : (
-            <button
-              type="button"
-              disabled={carregando}
-              onClick={carregar}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-brand-100 px-6 py-5 font-display text-lg font-semibold text-brand-700 disabled:opacity-80"
-            >
-              {carregando ? 'Preparando seu acesso…' : 'Tentar novamente'}
-            </button>
-          )}
-          {erro && (
-            <p role="alert" className="mt-3 text-sm font-semibold text-peach-600">
-              {erro}
-            </p>
-          )}
+          <Link
+            to="/app"
+            className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-500 to-lilac-500 px-6 py-5 font-display text-lg font-semibold text-white shadow-soft transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
+          >
+            🎨 Acessar minhas atividades
+          </Link>
         </div>
 
         <p className="mt-5 flex items-center justify-center gap-1.5 text-xs font-semibold text-brand-900/55 sm:text-sm">

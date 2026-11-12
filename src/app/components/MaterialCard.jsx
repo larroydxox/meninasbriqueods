@@ -17,7 +17,7 @@ export function SeloPdf({ material }) {
   )
 }
 
-export default function MaterialCard({ material, categoria, token, onVisualizar, onAviso, indice = 0 }) {
+export default function MaterialCard({ material, categoria, onVisualizar, onAviso, indice = 0 }) {
   return (
     <article
       className="flex gap-3.5 rounded-[1.75rem] bg-white p-3.5 shadow-softer ring-1 ring-brand-100/70 animate-slide-up"
@@ -41,7 +41,7 @@ export default function MaterialCard({ material, categoria, token, onVisualizar,
           <SeloPdf material={material} />
         </div>
         <div className="mt-3">
-          <BotoesMaterial material={material} token={token} onVisualizar={onVisualizar} onAviso={onAviso} compacto />
+          <BotoesMaterial material={material} onVisualizar={onVisualizar} onAviso={onAviso} compacto />
         </div>
       </div>
     </article>

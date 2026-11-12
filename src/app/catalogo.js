@@ -1,5 +1,4 @@
-// Catálogo visual dos materiais do mini app. Os arquivos reais ficam criptografados em
-// private/materiais e são entregues por /api/material (ver api/_lib/materiais.js).
+// Catálogo visual dos materiais do mini app. Os PDFs ficam em public/materiais/<arquivo>.
 import capaKit from '../assets/app/capas/kit-principal-210-atividades.webp'
 import capaCientistas from '../assets/app/capas/pequenos-cientistas.webp'
 import capaTurma from '../assets/app/capas/diversao-em-turma.webp'

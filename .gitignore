@@ -23,6 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# PDFs originais (sem criptografia) — nunca versionar
-materiais-originais/
-.env

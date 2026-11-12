@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import ScrollToTop from './components/utils/ScrollToTop.jsx'
 import Landing from './pages/Landing.jsx'
 import PreCheckout from './pages/PreCheckout.jsx'
@@ -17,8 +17,9 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/pre-checkout" element={<PreCheckout />} />
           <Route path="/obrigado" element={<Obrigado />} />
-          <Route path="/app/:token" element={<MembersApp />} />
           <Route path="/app" element={<MembersApp />} />
+          {/* Links antigos com código (/app/xxxx) continuam funcionando */}
+          <Route path="/app/*" element={<Navigate to="/app" replace />} />
         </Routes>
       </Suspense>
     </>

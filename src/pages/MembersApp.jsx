@@ -1,8 +1,6 @@
-import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Suspense, lazy, useMemo, useState } from 'react'
 import usePaginaPrivada from '../app/usePaginaPrivada.js'
 import useOverlay from '../app/useOverlay.js'
-import { verificarToken } from '../app/api.js'
 import { CATEGORIAS, KIT_PRINCIPAL, MATERIAIS, buscarMateriais, getMaterial } from '../app/catalogo.js'
 import { VIDEOS } from '../app/videos.js'
 import BottomNav from '../app/components/BottomNav.jsx'
@@ -31,7 +29,7 @@ function TituloSecao({ children, acao }) {
 }
 
 /* ---------------------------------- Início ---------------------------------- */
-function Inicio({ token, onVisualizar, onAviso, onAbrirVideo, onIrPara, onCopiarLink }) {
+function Inicio({ onVisualizar, onAviso, onAbrirVideo, onIrPara, onCopiarLink }) {
   const outros = MATERIAIS.slice(1)
   return (
     <div className="flex flex-col gap-8">
@@ -76,7 +74,7 @@ function Inicio({ token, onVisualizar, onAviso, onAbrirVideo, onIrPara, onCopiar
             </div>
           </div>
           <div className="mt-4">
-            <BotoesMaterial material={KIT_PRINCIPAL} token={token} onVisualizar={onVisualizar} onAviso={onAviso} />
+            <BotoesMaterial material={KIT_PRINCIPAL} onVisualizar={onVisualizar} onAviso={onAviso} />
           </div>
         </article>
       </section>
@@ -142,7 +140,7 @@ function Inicio({ token, onVisualizar, onAviso, onAbrirVideo, onIrPara, onCopiar
 }
 
 /* -------------------------------- Materiais --------------------------------- */
-function Materiais({ token, onVisualizar, onAviso }) {
+function Materiais({ onVisualizar, onAviso }) {
   const [busca, setBusca] = useState('')
   const [filtro, setFiltro] = useState('todos')
   const resultados = useMemo(() => buscarMateriais(busca), [busca])
@@ -212,7 +210,7 @@ function Materiais({ token, onVisualizar, onAviso }) {
             </TituloSecao>
             <div className="flex flex-col gap-3">
               {itens.map((m, i) => (
-                <MaterialCard key={m.id} material={m} categoria={categoria} token={token} onVisualizar={onVisualizar} onAviso={onAviso} indice={i} />
+                <MaterialCard key={m.id} material={m} categoria={categoria} onVisualizar={onVisualizar} onAviso={onAviso} indice={i} />
               ))}
             </div>
           </section>
@@ -243,28 +241,11 @@ function Videos({ onAbrirVideo }) {
 }
 
 /* ----------------------------------- App ------------------------------------ */
-function TelaCheia({ children }) {
-  return <main className="flex min-h-[100svh] flex-col items-center justify-center gap-4 bg-cream-50 px-8 text-center">{children}</main>
-}
-
 export default function MembersApp() {
   usePaginaPrivada('Cantinho Criativo · Minhas atividades')
-  const { token = '' } = useParams()
-  const [acesso, setAcesso] = useState({ estado: 'verificando' })
   const [aba, setAba] = useState('inicio')
   const { overlay, abrir, fechar } = useOverlay()
   const { toast, mostrar } = useToast()
-
-  const verificar = useCallback(() => {
-    setAcesso({ estado: 'verificando' })
-    verificarToken(token)
-      .then(() => setAcesso({ estado: 'ok' }))
-      .catch((e) => setAcesso({ estado: e.status === 401 ? 'invalido' : 'erro', mensagem: e.message }))
-  }, [token])
-
-  useEffect(() => {
-    verificar()
-  }, [verificar])
 
   const trocarAba = (nova) => {
     setAba(nova)
@@ -281,38 +262,6 @@ export default function MembersApp() {
     } catch {
       mostrar('Não foi possível copiar. Salve esta página nos favoritos.', 'erro')
     }
-  }
-
-  if (acesso.estado === 'verificando') {
-    return (
-      <TelaCheia>
-        <span className="text-5xl animate-float" aria-hidden="true">🖍️</span>
-        <Pontinhos />
-        <p className="font-display text-lg font-semibold text-brand-900/70">Preparando seu cantinho…</p>
-      </TelaCheia>
-    )
-  }
-
-  if (acesso.estado !== 'ok') {
-    const invalido = acesso.estado === 'invalido'
-    return (
-      <TelaCheia>
-        <span className="text-5xl" aria-hidden="true">{invalido ? '🔒' : '😕'}</span>
-        <h1 className="text-2xl text-brand-900">{invalido ? 'Link de acesso inválido' : 'Não foi possível abrir'}</h1>
-        <p className="max-w-xs text-sm text-brand-900/65">
-          {invalido ? 'Confira se você copiou o link completo que recebeu depois da compra.' : acesso.mensagem}
-        </p>
-        {invalido ? (
-          <Link to="/" className="rounded-full bg-brand-100 px-5 py-3 font-display font-semibold text-brand-700">
-            Ir para a página inicial
-          </Link>
-        ) : (
-          <button type="button" onClick={verificar} className="rounded-full bg-brand-500 px-6 py-3 font-display font-semibold text-white">
-            Tentar novamente
-          </button>
-        )}
-      </TelaCheia>
-    )
   }
 
   const materialAberto = overlay?.tipo === 'pdf' ? getMaterial(overlay.id) : null
@@ -338,9 +287,9 @@ export default function MembersApp() {
       <main className="mx-auto max-w-md px-5 pt-5 pb-[calc(7rem+env(safe-area-inset-bottom))]">
         <div key={aba} className="animate-fade-in">
           {aba === 'inicio' && (
-            <Inicio token={token} onVisualizar={visualizar} onAviso={mostrar} onAbrirVideo={abrirVideo} onIrPara={trocarAba} onCopiarLink={copiarLink} />
+            <Inicio onVisualizar={visualizar} onAviso={mostrar} onAbrirVideo={abrirVideo} onIrPara={trocarAba} onCopiarLink={copiarLink} />
           )}
-          {aba === 'materiais' && <Materiais token={token} onVisualizar={visualizar} onAviso={mostrar} />}
+          {aba === 'materiais' && <Materiais onVisualizar={visualizar} onAviso={mostrar} />}
           {aba === 'videos' && <Videos onAbrirVideo={abrirVideo} />}
         </div>
       </main>
@@ -356,7 +305,7 @@ export default function MembersApp() {
             </div>
           }
         >
-          <PdfViewer material={materialAberto} token={token} onFechar={fechar} onAviso={mostrar} />
+          <PdfViewer material={materialAberto} onFechar={fechar} onAviso={mostrar} />
         </Suspense>
       )}
       {videoAberto && <VideoPlayer video={videoAberto} onFechar={fechar} />}

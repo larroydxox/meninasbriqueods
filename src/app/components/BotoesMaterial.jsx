@@ -4,20 +4,15 @@ import { Spinner } from './Carregando.jsx'
 import { IconeBaixar, IconeOlho } from './Icones.jsx'
 
 /** Botões "Visualizar" e "Baixar" de um material. `compacto` reduz o tamanho para os cards da lista. */
-export default function BotoesMaterial({ material, token, onVisualizar, onAviso, compacto = false }) {
+export default function BotoesMaterial({ material, onVisualizar, onAviso, compacto = false }) {
   const [baixando, setBaixando] = useState(false)
 
-  const baixar = async () => {
+  const baixar = () => {
     if (baixando) return
     setBaixando(true)
-    try {
-      await baixarMaterial(material, token)
-      onAviso?.('Download iniciado! 📥')
-    } catch (e) {
-      onAviso?.(e.message, 'erro')
-    } finally {
-      setBaixando(false)
-    }
+    baixarMaterial(material)
+    onAviso?.('Download iniciado! 📥')
+    setTimeout(() => setBaixando(false), 1200)
   }
 
   const tamanho = compacto ? 'h-10 px-3.5 text-sm' : 'h-12 px-5 text-base'
