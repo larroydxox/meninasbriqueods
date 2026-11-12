@@ -51,3 +51,56 @@ altere esse arquivo em vez de procurar dentro dos componentes.
 - VSL servida pela vturb (script carregado de forma assíncrona).
 - `loading="lazy"` + `decoding="async"` em todas as imagens abaixo da dobra.
 - Todas as imagens usam `aspect-ratio` reservado (evita layout shift em 3G/4G).
+
+## Área pós-compra: página de obrigado + mini app
+
+| Rota | O que é |
+| --- | --- |
+| `/obrigado` | Página de obrigado. Configure-a como URL de redirecionamento pós-compra na Payt. |
+| `/app/<token>` | Mini app com os materiais (PDFs), busca, categorias e vídeos. |
+| `/api/acesso` | Devolve o link do mini app (usado pela `/obrigado`). |
+| `/api/verificar` | Confere se o token do link é válido. |
+| `/api/material?id=…&parte=…` | Entrega o PDF (descriptografado) só com o cabeçalho `X-Access-Token` correto. |
+
+### Variáveis de ambiente (obrigatórias no Vercel)
+
+Em **Vercel → Project → Settings → Environment Variables** (Production e Preview):
+
+| Nome | Valor |
+| --- | --- |
+| `MEMBER_ACCESS_TOKEN` | Identificador aleatório do link (24+ caracteres, gerado com `secrets`/`crypto`). |
+| `MATERIAIS_KEY` | Chave AES-256 (32 bytes em base64) usada para descriptografar os PDFs. |
+
+Depois de salvar, faça um novo deploy. Sem essas variáveis, a `/obrigado` e o app mostram
+"área não configurada" (a landing page continua funcionando normalmente).
+Para rodar localmente, coloque as duas no `.env.local` (ignorado pelo git).
+
+### Modelo de segurança — leia com atenção
+
+- **Não há login.** O acesso é um link direto `/app/<token>`. **Qualquer pessoa que tiver esse link
+  consegue ver e baixar os materiais.** A URL difícil de adivinhar não é autenticação: ela só impede
+  que o conteúdo seja achado por tentativa ou por buscadores.
+- **A `/obrigado` é pública.** Quem souber o endereço `/obrigado` recebe o link do app. Não há como
+  confirmar o pagamento sem uma integração com a Payt (webhook + link por comprador), que não foi feita.
+- **Um único link para todos.** Kit Básico e Kit Completo recebem o mesmo app (com os bônus).
+- **Trocar o link:** altere `MEMBER_ACCESS_TOKEN` no Vercel e faça redeploy. O link antigo para de
+  funcionar na hora (quem já comprou precisará do novo link).
+- **PDFs protegidos:** este repositório é **público**, por isso os PDFs ficam em `private/materiais/`
+  **criptografados** (AES-256-GCM). Os originais ficam em `materiais-originais/` (ignorado pelo git).
+  Só a função `/api/material` descriptografa, e só com o token correto no cabeçalho.
+- **Sem token em logs/analytics:** o token vai no cabeçalho `X-Access-Token` (não na query string) e os
+  scripts da UTMify não rodam em `/app/*`.
+- **Sem indexação:** `X-Robots-Tag: noindex` em `/obrigado`, `/app/*` e `/api/*` (vercel.json) e
+  `<meta name="robots" content="noindex">` aplicado nessas páginas.
+
+### Adicionar ou trocar um PDF
+
+1. Coloque o PDF em `materiais-originais/`.
+2. Rode `node scripts/criptografar-materiais.mjs` (usa a `MATERIAIS_KEY` do `.env.local`).
+3. Cadastre o id → arquivo em `api/_lib/materiais.js` e o card (título, capa, descrição) em `src/app/catalogo.js`.
+4. Capa: `pdftoppm -f 1 -l 1 -scale-to-x 640 -scale-to-y -1 -png arquivo.pdf capa` e converta para WebP em `src/assets/app/capas/`.
+
+### Vídeos
+
+Lista em `src/app/videos.js` (canal Professora Carolina Palhas). Os vídeos são exibidos só pelo player
+oficial do YouTube (`youtube-nocookie.com`), com link para abrir no YouTube — nada é baixado ou republicado.

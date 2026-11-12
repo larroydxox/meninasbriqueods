@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# PDFs originais (sem criptografia) — nunca versionar
+materiais-originais/
+.env
