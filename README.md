@@ -78,3 +78,15 @@ mas não impede o acesso de quem tiver o link.
 
 Lista em `src/app/videos.js` (canal Professora Carolina Palhas). Os vídeos são exibidos só pelo player
 oficial do YouTube (`youtube-nocookie.com`), com link para abrir no YouTube — nada é baixado ou republicado.
+
+## Rastreamento (Meta Pixel + API de Conversões + UTMify)
+
+- **UTMify:** scripts de UTMs e pixel no `<head>` do `index.html`.
+- **Meta Pixel** `1475611941143430`: PageView no `index.html`.
+- **InitiateCheckout:** `src/tracking.js` dispara em todo link com a classe `btn-checkout`
+  (Kit Completo R$19,90, oferta do modal R$15, básico R$10, X e fundo do modal), pelo Pixel
+  **e** pela API de Conversões (`/api/meta-evento`), com o mesmo `event_id` (a Meta deduplica).
+- **API de Conversões:** configure no Vercel → Settings → Environment Variables:
+  - `META_CAPI_TOKEN` — token de acesso gerado no Gerenciador de Eventos (**nunca** no código: o repositório é público).
+  - `META_TEST_EVENT_CODE` — opcional, só para validar na aba "Testar eventos"; remova depois.
+  Sem `META_CAPI_TOKEN`, a função não envia nada e o Pixel do navegador segue funcionando.
