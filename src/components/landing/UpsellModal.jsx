@@ -5,13 +5,17 @@ import PrimaryButton from '../ui/PrimaryButton.jsx'
 /**
  * Modal exibido ao clicar em "Quero o kit básico". Oferece o Kit Completo por
  * um valor especial. Fechar (X, clique fora ou Esc) leva ao checkout do básico.
+ *
+ * RASTREAMENTO (UTMify / InitiateCheckout): o modal fica sempre no HTML (só escondido),
+ * e todo caminho para o checkout é um link <a href="checkout"> com a classe "btn-checkout".
+ * Assim o pixel e o script de UTMs da UTMify enxergam os links desde o carregamento.
  */
 export default function UpsellModal({ open }) {
   const primaryRef = useRef(null)
+  const closeLinkRef = useRef(null)
 
-  const goToBasicCheckout = () => {
-    window.location.href = CHECKOUT_URL
-  }
+  // Esc "clica" no X, que é um link real para o checkout do básico.
+  const goToBasicCheckout = () => closeLinkRef.current?.click()
 
   useEffect(() => {
     if (!open) return
@@ -29,32 +33,36 @@ export default function UpsellModal({ open }) {
     }
   }, [open])
 
-  if (!open) return null
-
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 px-4 py-6 backdrop-blur-sm animate-fade-in"
-      onClick={goToBasicCheckout}
+      className={`fixed inset-0 z-50 items-center justify-center px-4 py-6 ${open ? 'flex animate-fade-in' : 'hidden'}`}
+      aria-hidden={!open}
     >
+      {/* Clicar fora = link para o checkout do básico */}
+      <a
+        href={CHECKOUT_URL}
+        className="btn-checkout absolute inset-0 bg-brand-950/60 backdrop-blur-sm"
+        tabIndex={-1}
+        aria-hidden="true"
+      />
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="upsell-title"
         className="relative w-full max-w-md rounded-[2rem] bg-white p-6 text-center shadow-soft ring-2 ring-lilac-200 animate-pop sm:p-8"
-        onClick={(e) => e.stopPropagation()}
       >
-        <button
-          type="button"
-          onClick={goToBasicCheckout}
+        <a
+          ref={closeLinkRef}
+          href={CHECKOUT_URL}
           aria-label="Fechar e continuar com o kit básico"
-          className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-brand-50 text-brand-900/60 transition hover:bg-brand-100"
+          className="btn-checkout absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-brand-50 text-brand-900/60 transition hover:bg-brand-100"
         >
           <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" aria-hidden="true">
             <path d="M6 6l12 12M18 6 6 18" />
           </svg>
-        </button>
+        </a>
 
-        <h2 id="upsell-title" className="mt-2 font-display text-xl font-bold leading-tight text-brand-900 sm:text-2xl">
+        <h2 id="upsell-title" className="mt-2 px-7 font-display text-xl font-bold leading-tight text-brand-900 sm:text-2xl">
           {upsellModal.title}
         </h2>
         <p className="mt-3 text-sm text-brand-900/70 sm:text-base">{upsellModal.subtitle}</p>
@@ -79,13 +87,13 @@ export default function UpsellModal({ open }) {
           <span className="font-display text-4xl font-bold text-brand-600">{upsellModal.price}</span>
         </div>
 
-        <PrimaryButton ref={primaryRef} href={CHECKOUT_URL_UPSELL} variant="bloom" icon={false} className="mt-6 w-full sm:w-full">
+        <PrimaryButton ref={primaryRef} href={CHECKOUT_URL_UPSELL} variant="bloom" icon={false} className="btn-checkout mt-6 w-full sm:w-full">
           {upsellModal.ctaLabel}
         </PrimaryButton>
 
         <a
           href={CHECKOUT_URL}
-          className="mt-4 inline-block text-xs font-semibold text-brand-900/50 underline underline-offset-2 sm:text-sm"
+          className="btn-checkout mt-4 inline-block text-xs font-semibold text-brand-900/50 underline underline-offset-2 sm:text-sm"
         >
           {upsellModal.declineLabel}
         </a>

@@ -18,7 +18,7 @@ const badgeIcons = {
   ),
 }
 
-function OfferCard({ offer, highlighted = false, ctaProps }) {
+function OfferCard({ offer, highlighted = false, ctaProps, checkout = false }) {
   return (
     <div
       className={`relative flex w-full flex-col rounded-[2rem] bg-white p-6 text-center shadow-soft sm:p-9 lg:text-left ${
@@ -70,7 +70,7 @@ function OfferCard({ offer, highlighted = false, ctaProps }) {
         ))}
       </ul>
 
-      <PrimaryButton variant="bloom" icon={false} className="mt-auto w-full sm:w-full" {...ctaProps}>
+      <PrimaryButton variant="bloom" icon={false} className={`mt-auto w-full sm:w-full ${checkout ? 'btn-checkout' : ''}`} {...ctaProps}>
         <span aria-hidden="true">✨ </span>
         {offer.ctaLabel}
       </PrimaryButton>
@@ -99,7 +99,7 @@ export default function OfferSection() {
 
         <Reveal className="grid grid-cols-1 items-stretch gap-10 md:grid-cols-2 md:gap-6 lg:gap-8">
           <OfferCard offer={offers.basic} ctaProps={{ onClick: () => setUpsellOpen(true) }} />
-          <OfferCard offer={offers.complete} highlighted ctaProps={{ href: CHECKOUT_URL_COMPLETO }} />
+          <OfferCard offer={offers.complete} highlighted checkout ctaProps={{ href: CHECKOUT_URL_COMPLETO }} />
         </Reveal>
       </div>
 
